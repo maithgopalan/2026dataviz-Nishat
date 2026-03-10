@@ -4,21 +4,14 @@
     "href": "blog.html",
     "title": "blog",
     "section": "",
-    "text": "Demo Post\n\n\n\ndemo\n\nlab\n\n\n\n\n\n\n\n\n\nFeb 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nProgress Update 1\n\n\n\n\n\n\n\n\nFeb 24, 2026\n\n\n\n\n\n\n\n\n\n\n\n\nDemo Post\n\n\n\ndemo\n\nlab\n\n\n\n\n\n\n\n\n\nFeb 24, 2026\n\n\n\n\n\nNo matching items"
+    "text": "viz-1-aggression\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviz-2 commenters\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviz-3_exchange\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nviz-4_engagement\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProgress Update 1\n\n\n\n\n\n\n\n\nFeb 24, 2026\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/demo-post.html",
-    "href": "posts/demo-post.html",
-    "title": "Demo Post",
+    "objectID": "posts/viz-1-aggression.html",
+    "href": "posts/viz-1-aggression.html",
+    "title": "viz-1-aggression",
     "section": "",
-    "text": "This is a test post to confirm the blog listing works."
-  },
-  {
-    "objectID": "posts/Demo Post.html",
-    "href": "posts/Demo Post.html",
-    "title": "Demo Post",
-    "section": "",
-    "text": "This is a test post to confirm the blog listing works."
+    "text": "library(tidyverse) library(janitor) library(scales) install.packages(“ggrepel”)"
   },
   {
     "objectID": "posts/progress-01.html",
@@ -33,27 +26,6 @@
     "title": "Progress Update 1",
     "section": "",
     "text": "Created a Quarto website project with a blog listing page and site pages (Home, About, Blog, Visualizations).\nRendered the site to the docs/ folder for GitHub Pages deployment.\nSet up a GitHub repository for the final project and pushed the full site structure to main.\nResolved GitHub large file rejection by removing the large dataset from version control and adding a .gitignore to prevent future large data commits.\nCreated a reproducible project structure with data/, data_clean/, and scripts/ folders.\nAdded an initial Visualizations page and prepared it for publishing the first chart.\nNext steps: clean a small dataset using a script, publish the first visualization with brief interpretation, and share the GitHub repo with a colleague for peer review."
-  },
-  {
-    "objectID": "viz.html",
-    "href": "viz.html",
-    "title": "Visualizations",
-    "section": "",
-    "text": "Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n-1.0000  0.9610  1.0000  0.6354  1.0000  1.0000     591 \n\n\n\n\n\n\n\n\n\n\n\nAggression is not limited to cross-cutting exchanges. Like-minded comments appear highly concentrated at the upper end of the aggression scale, suggesting that emotional intensity may be amplified within ideologically aligned groups. Cross-cutting discussions show more variation, indicating that disagreement alone does not necessarily drive hostility.\n\n\n\n\n\n\n[1] 0.1492548\n\n\n\n\n\n\n\n\n\n\n\nParticipation is highly unequal. A small number of users contribute a disproportionately large share of comments, while most participants are far less active. This suggests that online political discourse may be shaped primarily by a vocal minority rather than broad engagement."
-  },
-  {
-    "objectID": "viz.html#visualization-1-tone-distribution",
-    "href": "viz.html#visualization-1-tone-distribution",
-    "title": "Visualizations",
-    "section": "",
-    "text": "Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's \n-1.0000  0.9610  1.0000  0.6354  1.0000  1.0000     591 \n\n\n\n\n\n\n\n\n\n\n\nAggression is not limited to cross-cutting exchanges. Like-minded comments appear highly concentrated at the upper end of the aggression scale, suggesting that emotional intensity may be amplified within ideologically aligned groups. Cross-cutting discussions show more variation, indicating that disagreement alone does not necessarily drive hostility."
-  },
-  {
-    "objectID": "viz.html#visualization-2-participant-concentration",
-    "href": "viz.html#visualization-2-participant-concentration",
-    "title": "Visualizations",
-    "section": "",
-    "text": "[1] 0.1492548\n\n\n\n\n\n\n\n\n\n\n\nParticipation is highly unequal. A small number of users contribute a disproportionately large share of comments, while most participants are far less active. This suggests that online political discourse may be shaped primarily by a vocal minority rather than broad engagement."
   },
   {
     "objectID": "about.html",

@@ -1,7 +1,0 @@
----
-title: "Demo Post"
-date: 2026-02-24
-categories: [demo, lab]
----
-
-# This is a test post to confirm the blog listing works.

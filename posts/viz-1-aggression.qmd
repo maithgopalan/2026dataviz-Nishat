@@ -1,0 +1,10 @@
+---
+title: "viz-1-aggression"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(janitor)
+library(scales)
+install.packages("ggrepel")

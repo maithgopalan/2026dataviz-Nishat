@@ -12,27 +12,6 @@
 <generator>quarto-1.8.27</generator>
 <lastBuildDate>Tue, 24 Feb 2026 08:00:00 GMT</lastBuildDate>
 <item>
-  <title>Demo Post</title>
-  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/Demo Post.html</link>
-  <description><![CDATA[ 
-
-
-
-
-
-<section id="this-is-a-test-post-to-confirm-the-blog-listing-works." class="level1">
-
-
-
-</section>
-
- ]]></description>
-  <category>demo</category>
-  <category>lab</category>
-  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/Demo Post.html</guid>
-  <pubDate>Tue, 24 Feb 2026 08:00:00 GMT</pubDate>
-</item>
-<item>
   <title>Progress Update 1</title>
   <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/progress-01.html</link>
   <description><![CDATA[ 
@@ -61,25 +40,69 @@
   <pubDate>Tue, 24 Feb 2026 08:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Demo Post</title>
-  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/demo-post.html</link>
+  <title>viz-1-aggression</title>
+  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-1-aggression.html</link>
   <description><![CDATA[ 
 
 
 
 
 
-<section id="this-is-a-test-post-to-confirm-the-blog-listing-works." class="level1">
+<p>library(tidyverse) library(janitor) library(scales) install.packages(“ggrepel”)</p>
 
 
-
-</section>
 
  ]]></description>
-  <category>demo</category>
-  <category>lab</category>
-  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/demo-post.html</guid>
-  <pubDate>Tue, 24 Feb 2026 08:00:00 GMT</pubDate>
+  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-1-aggression.html</guid>
+  <pubDate>Tue, 10 Mar 2026 01:40:15 GMT</pubDate>
+</item>
+<item>
+  <title>viz-2 commenters</title>
+  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-2 commenters.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-2 commenters.html</guid>
+  <pubDate>Tue, 10 Mar 2026 01:40:15 GMT</pubDate>
+</item>
+<item>
+  <title>viz-3_exchange</title>
+  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-3_exchange.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-3_exchange.html</guid>
+  <pubDate>Tue, 10 Mar 2026 01:40:15 GMT</pubDate>
+</item>
+<item>
+  <title>viz-4_engagement</title>
+  <link>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-4_engagement.html</link>
+  <description><![CDATA[ 
+
+
+
+
+
+
+
+
+ ]]></description>
+  <guid>https://github.com/Dorin2017/Final-Project-Blog-1.git/posts/viz-4_engagement.html</guid>
+  <pubDate>Tue, 10 Mar 2026 01:40:15 GMT</pubDate>
 </item>
 </channel>
 </rss>
