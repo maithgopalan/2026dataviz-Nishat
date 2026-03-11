@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Home – Brexit Social Media Interaction Analysis</title>
+<title>blog – Brexit Social Media Interaction Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -131,7 +131,7 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Brexit Social Media Interaction Analysis" href="index.xml" data-external="1"></head>
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -151,7 +151,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -192,7 +192,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Home</h1>
+      <h1 class="title">blog</h1>
                       </div>
   </div>
     
@@ -217,78 +217,9 @@ window.Quarto = {
 
 
 
-<section id="dataset-overview" class="level2">
-<h2 class="anchored" data-anchor-id="dataset-overview">Dataset Overview</h2>
-<p>This project analyzes a dataset of <strong>5,000 anonymized comments related to Brexit discussions</strong> collected from social media platforms associated with three major campaign groups: <strong>LeaveEU, VoteLeave, and StrongerIn</strong>. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.</p>
-<p>Each row in the dataset represents <strong>one comment</strong> made by a participant in the discussion. The variables describe the commenter, the tone of the message, the political context of the discussion, and the interaction structure of the conversation.</p>
-</section>
-<section id="variable-descriptions" class="level2">
-<h2 class="anchored" data-anchor-id="variable-descriptions">Variable Descriptions</h2>
-<p><strong>Commenter_ID</strong><br>
-A unique anonymized identifier assigned to each participant in the discussion. It allows us to track how many comments each individual made without revealing personal identities.</p>
-<p><strong>Comment_ID</strong><br>
-A unique identifier for each individual comment in the dataset.</p>
-<p><strong>Argument</strong></p>
-<p>The textual content of the comment. This field contains the actual message posted by the participant.</p>
-<p><strong>Date</strong><br>
-The date on which the comment was posted.</p>
-<p><strong>Commenter_BA_Score</strong><br>
-A behavioral aggression score assigned to the comment. This metric captures the tone of the comment on a scale where higher values indicate more aggressive or confrontational language, while lower values indicate less aggressive or more conciliatory language.</p>
-<p><strong>Brexit_Attitude</strong><br>
-The political stance of the commenter in relation to Brexit.<br>
-Possible categories include:</p>
-<ul>
-<li><p><strong>Brexiteer</strong> – supportive of leaving the European Union</p></li>
-<li><p><strong>Remainer</strong> – supportive of remaining in the European Union</p></li>
-<li><p><strong>Unknown</strong> – stance could not be clearly determined from the comment</p></li>
-</ul>
-<p><strong>Commenter_Total_Reactions</strong><br>
-</p>
-<p>The total number of reactions (such as likes, shares, or other engagement indicators) received by the comment. This variable provides a measure of how much attention or engagement a comment generated.</p>
-<p><strong>Campaign</strong><br>
-</p>
-<p>The campaign group associated with the discussion thread where the comment was posted.<br>
-The dataset includes comments from three major campaign spaces:</p>
-<ul>
-<li><p><strong>LeaveEU</strong></p></li>
-<li><p><strong>VoteLeave</strong></p></li>
-<li><p><strong>StrongerIn</strong></p>
-<p>These represent major campaign organizations involved in the Brexit debate.</p></li>
-</ul>
-<p><strong>Comment_Order</strong><br>
-</p>
-<p>The position of the comment within a discussion thread. Lower values indicate comments earlier in the conversation, while higher values indicate later responses.</p>
-<p><strong>Comment_Type</strong><br>
-</p>
-<p>Describes the type of comment made in the discussion (for example, a direct argument, response, or other interaction type).</p>
-<p><strong>Cross_Cutting_w_Counters</strong><br>
-</p>
-<p>Indicates whether the interaction involved disagreement between opposing viewpoints <strong>with explicit counterarguments</strong>.</p>
-<p><strong>Cross_Cutting_without_Counters</strong><br>
-</p>
-<p>Indicates whether the interaction involved disagreement between opposing viewpoints <strong>without explicit counterarguments</strong>.</p>
-<p><strong>Chain_Comment</strong><br>
-</p>
-<p>Indicates whether the comment is part of a longer conversational chain (a back-and-forth discussion) or a standalone comment.</p>
-<ul>
-<li><p><strong>Standalone</strong> – a single comment not part of a reply chain</p></li>
-<li><p><strong>Chain</strong> – a comment that is part of an ongoing discussion thread</p></li>
-</ul>
-</section>
-<section id="why-these-variables-matter" class="level2">
-<h2 class="anchored" data-anchor-id="why-these-variables-matter">Why These Variables Matter</h2>
-<p>Together, these variables allow us to explore several key questions about online political discourse during the Brexit debate:</p>
-<ul>
-<li><p>Do people with different political identities communicate differently in terms of tone and aggression?</p></li>
-<li><p>Do discussions mostly occur among <strong>like-minded participants</strong>, or do people engage with opposing viewpoints?</p></li>
-<li><p>Are discussions dominated by a <strong>small number of highly active participants</strong>, or are they broadly distributed across many users?</p></li>
-<li><p>Do more aggressive comments attract <strong>more engagement</strong> from other users?</p>
-<p>These questions guide the visualizations presented in the project, which examine patterns of political identity, participation inequality, conversational structure, and engagement in online Brexit discussions.</p></li>
-</ul>
 
 
 
-</section>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
