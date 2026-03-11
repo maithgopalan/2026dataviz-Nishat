@@ -1,12 +1,12 @@
 ---
-title: "Brexit Social Media Interaction Dashboard"
+title: "Project Dashboard"
 output-file: index.html
 format:
   dashboard:
     orientation: rows
     scrolling: true
     embed-resources: true
-    theme: [cosmo, styles.scss]
+    theme: [cosmo, brexit-dashboard.scss]
 ---
 
 ```{r}

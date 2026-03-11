@@ -8,24 +8,19 @@ website:
   navbar:
     left: 
       - href: index.qmd
-        text: Home
+        text: Project Overview
         
       - href: dashboard.qmd
-        text: Dashboard
+        text: Project Dashboard
         
-      - text: Visualizations
-        menu:
-          - href: posts/viz1-aggression.qmd
-            text: Aggression by Political Identity
-            
-          - href: posts/viz2-commenters.qmd
-            text: Comment Participation Concentration
-            
-          - href: posts/viz3-exchange.qmd
-            text: Like-Minded vs Cross-Cutting Exchange
-            
-          - href: posts/viz4-engagement.qmd
-            text: Aggression and Engagement
+      - href: posts/viz1-aggression.qmd
+        text: Aggression by Political Identity
+      - href: posts/viz2-commenters.qmd
+        text: Comment Participation Concentration
+      - href: posts/viz3-exchange.qmd
+        text: Like-Minded vs Cross-Cutting Exchange
+      - href: posts/viz4-engagement.qmd
+        text: Aggression and Engagement
 
 format:
   html:
