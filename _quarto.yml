@@ -31,27 +31,6 @@ format:
   html:
     theme: cosmo
     css: styles.css
-    navbar
-    * Navbar styling */
-.navbar {
-  font-weight: 600;
-}
-
-/* Dashboard cards */
-.quarto-dashboard .card {
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-
-/* Card headers */
-.quarto-dashboard .card-header {
-  font-weight: 700;
-  font-size: 1.05rem;
-}
-
-/* Plot titles */
-h1, h2, h3 {
-  letter-spacing: 0.3px;}
     toc: false
     code-fold: false
     fig-width: 8

@@ -12,4 +12,91 @@ page-layout: full
 title-block-banner: true
 ---
 
-## Welcome to the Final Project for EDLD 652. I am looking at **political disagreement on Facebook during the Brexit referendum.**
+## Dataset Overview
+
+This project analyzes a dataset of **5,000 anonymized comments related to Brexit discussions** collected from social media platforms associated with three major campaign groups: **LeaveEU, VoteLeave, and StrongerIn**. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.
+
+Each row in the dataset represents **one comment** made by a participant in the discussion. The variables describe the commenter, the tone of the message, the political context of the discussion, and the interaction structure of the conversation.
+
+## Variable Descriptions
+
+**Commenter_ID**\
+A unique anonymized identifier assigned to each participant in the discussion. It allows us to track how many comments each individual made without revealing personal identities.
+
+**Comment_ID**\
+A unique identifier for each individual comment in the dataset.
+
+**Argument**
+
+The textual content of the comment. This field contains the actual message posted by the participant.
+
+**Date**\
+The date on which the comment was posted.
+
+**Commenter_BA_Score**\
+A behavioral aggression score assigned to the comment. This metric captures the tone of the comment on a scale where higher values indicate more aggressive or confrontational language, while lower values indicate less aggressive or more conciliatory language.
+
+**Brexit_Attitude**\
+The political stance of the commenter in relation to Brexit.\
+Possible categories include:
+
+-   **Brexiteer** – supportive of leaving the European Union
+
+-   **Remainer** – supportive of remaining in the European Union
+
+-   **Unknown** – stance could not be clearly determined from the comment
+
+**Commenter_Total_Reactions**\
+
+The total number of reactions (such as likes, shares, or other engagement indicators) received by the comment. This variable provides a measure of how much attention or engagement a comment generated.
+
+**Campaign**\
+
+The campaign group associated with the discussion thread where the comment was posted.\
+The dataset includes comments from three major campaign spaces:
+
+-   **LeaveEU**
+
+-   **VoteLeave**
+
+-   **StrongerIn**
+
+    These represent major campaign organizations involved in the Brexit debate.
+
+**Comment_Order**\
+
+The position of the comment within a discussion thread. Lower values indicate comments earlier in the conversation, while higher values indicate later responses.
+
+**Comment_Type**\
+
+Describes the type of comment made in the discussion (for example, a direct argument, response, or other interaction type).
+
+**Cross_Cutting_w_Counters**\
+
+Indicates whether the interaction involved disagreement between opposing viewpoints **with explicit counterarguments**.
+
+**Cross_Cutting_without_Counters**\
+
+Indicates whether the interaction involved disagreement between opposing viewpoints **without explicit counterarguments**.
+
+**Chain_Comment**\
+
+Indicates whether the comment is part of a longer conversational chain (a back-and-forth discussion) or a standalone comment.
+
+-   **Standalone** – a single comment not part of a reply chain
+
+-   **Chain** – a comment that is part of an ongoing discussion thread
+
+## Why These Variables Matter
+
+Together, these variables allow us to explore several key questions about online political discourse during the Brexit debate:
+
+-   Do people with different political identities communicate differently in terms of tone and aggression?
+
+-   Do discussions mostly occur among **like-minded participants**, or do people engage with opposing viewpoints?
+
+-   Are discussions dominated by a **small number of highly active participants**, or are they broadly distributed across many users?
+
+-   Do more aggressive comments attract **more engagement** from other users?
+
+    These questions guide the visualizations presented in the project, which examine patterns of political identity, participation inequality, conversational structure, and engagement in online Brexit discussions.
