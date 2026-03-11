@@ -1,8 +1,9 @@
 ---
-title: "Home"
+title: "Project Overview"
+
 listing:
   contents: posts
-  feed: true
+  feed: false
   sort: "date desc"
   type: default
   categories: true
@@ -11,8 +12,6 @@ listing:
 page-layout: full
 title-block-banner: true
 ---
-
-## Project Overview
 
 This project analyzes a dataset of **5,000 anonymized comments related to Brexit discussions** collected from social media platforms associated with three major campaign groups: **LeaveEU, VoteLeave, and StrongerIn**. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.
 

@@ -2,13 +2,14 @@ project:
   type: website
   output-dir: docs 
 
+
 website:
   site-url: https://dorin2017.github.io/Final-Project-Blog-1/ 
   title: "Brexit Social Media Interaction Analysis"
   navbar:
     left: 
       - href: index.qmd
-        text: Project Overview
+        text: Home
         
       - href: dashboard.qmd
         text: Project Dashboard
@@ -21,11 +22,11 @@ website:
         text: Like-Minded vs Cross-Cutting Exchange
       - href: posts/viz4-engagement.qmd
         text: Aggression and Engagement
-
+    
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css: brexit-dashboard.scss
     toc: false
     code-fold: false
     fig-width: 8

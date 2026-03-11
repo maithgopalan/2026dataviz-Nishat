@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Home – Brexit Social Media Interaction Analysis</title>
+<title>Project Overview – Brexit Social Media Interaction Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,8 +130,8 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Brexit Social Media Interaction Analysis" href="index.xml" data-external="1"></head>
+<link rel="stylesheet" href="brexit-dashboard.scss">
+</head>
 
 <body class="nav-fixed quarto-light">
 
@@ -152,10 +152,10 @@ window.Quarto = {
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
     <a class="nav-link active" href="./index.html" aria-current="page"> 
-<span class="menu-text">Project Overview</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="./dashboard.html"> 
 <span class="menu-text">Project Dashboard</span></a>
   </li>  
   <li class="nav-item">
@@ -185,7 +185,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-page-left">
-      <h1 class="title">Home</h1>
+      <h1 class="title">Project Overview</h1>
                       </div>
   </div>
     
@@ -210,11 +210,8 @@ window.Quarto = {
 
 
 
-<section id="project-overview" class="level2">
-<h2 class="anchored" data-anchor-id="project-overview">Project Overview</h2>
 <p>This project analyzes a dataset of <strong>5,000 anonymized comments related to Brexit discussions</strong> collected from social media platforms associated with three major campaign groups: <strong>LeaveEU, VoteLeave, and StrongerIn</strong>. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.</p>
 <p>Each row in the dataset represents <strong>one comment</strong> made by a participant in the discussion. The variables describe the commenter, the tone of the message, the political context of the discussion, and the interaction structure of the conversation.</p>
-</section>
 <section id="variable-descriptions" class="level2">
 <h2 class="anchored" data-anchor-id="variable-descriptions">Variable Descriptions</h2>
 <p><strong>Commenter_ID</strong><br>
@@ -293,7 +290,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1773255289995" data-listing-reading-time-sort="3" data-listing-word-count-sort="465">
 <div class="thumbnail"><a href="./posts/viz2-commenters.html" class="no-external">
 
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:listing:posts/viz2-commenters.html -->
+<p class="card-img-top"><img src="posts/viz2-commenters_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -301,7 +298,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <a href="./posts/viz2-commenters.html" class="no-external">Comment Participation Concentration</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/viz2-commenters.html" class="no-external">
-<!-- desc(5A0113B34292)[max=175]:posts/viz2-commenters.html -->
+This visualization examines whether participation in Brexit comment discussions is broadly shared or dominated by a small number of highly active users. Participant IDs are…
 </a></div>
 </div>
 <div class="metadata">
@@ -312,7 +309,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1773256300479" data-listing-reading-time-sort="3" data-listing-word-count-sort="527">
 <div class="thumbnail"><a href="./posts/viz3-exchange.html" class="no-external">
 
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:listing:posts/viz3-exchange.html -->
+<p class="card-img-top"><img src="posts/viz3-exchange_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -320,7 +317,9 @@ The dataset includes comments from three major campaign spaces:</p>
 <a href="./posts/viz3-exchange.html" class="no-external">Like-Minded vs Cross-Cutting Exchange</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/viz3-exchange.html" class="no-external">
-<!-- desc(5A0113B34292)[max=175]:posts/viz3-exchange.html -->
+This visualization examines whether Brexit discussion mostly happened among people who shared the same political views or whether people often engaged across disagreement.<br>
+<br>
+A…<br><br>
 </a></div>
 </div>
 <div class="metadata">
@@ -331,7 +330,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1773256637207" data-listing-reading-time-sort="3" data-listing-word-count-sort="532">
 <div class="thumbnail"><a href="./posts/viz4-engagement.html" class="no-external">
 
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:listing:posts/viz4-engagement.html -->
+<p class="card-img-top"><img src="posts/viz4-engagement_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -339,7 +338,9 @@ The dataset includes comments from three major campaign spaces:</p>
 <a href="./posts/viz4-engagement.html" class="no-external">Aggression and Engagement</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/viz4-engagement.html" class="no-external">
-<!-- desc(5A0113B34292)[max=175]:posts/viz4-engagement.html -->
+This visualization examines whether comments with stronger tone received more engagement from other users.<br>
+<br>
+‘Commenter_Total_Reactions’ measures how many reactions a comment…
 </a></div>
 </div>
 <div class="metadata">
@@ -350,7 +351,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1773256019839" data-listing-reading-time-sort="5" data-listing-word-count-sort="971">
 <div class="thumbnail"><a href="./posts/viz1-aggression.html" class="no-external">
 
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:listing:posts/viz1-aggression.html -->
+<p class="card-img-top"><img src="posts/viz1-aggression_files/figure-html/unnamed-chunk-4-1.png"  class="thumbnail-image card-img"/></p>
 
 </a></div>
 <div class="body">
@@ -358,7 +359,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <a href="./posts/viz1-aggression.html" class="no-external">Aggression by Political Identity</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/viz1-aggression.html" class="no-external">
-<!-- desc(5A0113B34292)[max=175]:posts/viz1-aggression.html -->
+This visualization examines whether political identity is associated with differences in comment tone. Understanding this helps show whether discussions are polarized or…
 </a></div>
 </div>
 <div class="metadata">
@@ -369,7 +370,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <div class="quarto-post image-right" data-index="4" data-listing-date-sort="1771920000000" data-listing-file-modified-sort="1772001222989" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="134">
 <div class="thumbnail"><a href="./posts/progress-01.html" class="no-external">
 
-<!-- img(9CEB782EFEE6)[progressive=false, height=]:listing:posts/progress-01.html -->
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
 
 </a></div>
 <div class="body">
@@ -377,7 +378,7 @@ The dataset includes comments from three major campaign spaces:</p>
 <a href="./posts/progress-01.html" class="no-external">Progress Update 1</a>
 </h3>
 <div class="delink listing-description"><a href="./posts/progress-01.html" class="no-external">
-<!-- desc(5A0113B34292)[max=175]:posts/progress-01.html -->
+Created a Quarto website project with a blog listing page and site pages (Home, About, Blog, Visualizations).
 </a></div>
 </div>
 <div class="metadata">

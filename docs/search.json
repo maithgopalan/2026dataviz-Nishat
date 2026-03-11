@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Project Overview",
+    "section": "",
+    "text": "This project analyzes a dataset of 5,000 anonymized comments related to Brexit discussions collected from social media platforms associated with three major campaign groups: LeaveEU, VoteLeave, and StrongerIn. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.\nEach row in the dataset represents one comment made by a participant in the discussion. The variables describe the commenter, the tone of the message, the political context of the discussion, and the interaction structure of the conversation."
+  },
+  {
+    "objectID": "index.html#variable-descriptions",
+    "href": "index.html#variable-descriptions",
+    "title": "Project Overview",
+    "section": "Variable Descriptions",
+    "text": "Variable Descriptions\nCommenter_ID\nA unique anonymized identifier assigned to each participant in the discussion. It allows us to track how many comments each individual made without revealing personal identities.\nComment_ID\nA unique identifier for each individual comment in the dataset.\nArgument\nThe textual content of the comment. This field contains the actual message posted by the participant.\nDate\nThe date on which the comment was posted.\nCommenter_BA_Score\nA behavioral aggression score assigned to the comment. This metric captures the tone of the comment on a scale where higher values indicate more aggressive or confrontational language, while lower values indicate less aggressive or more conciliatory language.\nBrexit_Attitude\nThe political stance of the commenter in relation to Brexit.\nPossible categories include:\n\nBrexiteer – supportive of leaving the European Union\nRemainer – supportive of remaining in the European Union\nUnknown – stance could not be clearly determined from the comment\n\nCommenter_Total_Reactions\n\nThe total number of reactions (such as likes, shares, or other engagement indicators) received by the comment. This variable provides a measure of how much attention or engagement a comment generated.\nCampaign\n\nThe campaign group associated with the discussion thread where the comment was posted.\nThe dataset includes comments from three major campaign spaces:\n\nLeaveEU\nVoteLeave\nStrongerIn\nThese represent major campaign organizations involved in the Brexit debate.\n\nComment_Order\n\nThe position of the comment within a discussion thread. Lower values indicate comments earlier in the conversation, while higher values indicate later responses.\nComment_Type\n\nDescribes the type of comment made in the discussion (for example, a direct argument, response, or other interaction type).\nCross_Cutting_w_Counters\n\nIndicates whether the interaction involved disagreement between opposing viewpoints with explicit counterarguments.\nCross_Cutting_without_Counters\n\nIndicates whether the interaction involved disagreement between opposing viewpoints without explicit counterarguments.\nChain_Comment\n\nIndicates whether the comment is part of a longer conversational chain (a back-and-forth discussion) or a standalone comment.\n\nStandalone – a single comment not part of a reply chain\nChain – a comment that is part of an ongoing discussion thread"
+  },
+  {
+    "objectID": "index.html#why-these-variables-matter",
+    "href": "index.html#why-these-variables-matter",
+    "title": "Project Overview",
+    "section": "Why These Variables Matter",
+    "text": "Why These Variables Matter\nTogether, these variables allow us to explore several key questions about online political discourse during the Brexit debate:\n\nDo people with different political identities communicate differently in terms of tone and aggression?\nDo discussions mostly occur among like-minded participants, or do people engage with opposing viewpoints?\nAre discussions dominated by a small number of highly active participants, or are they broadly distributed across many users?\nDo more aggressive comments attract more engagement from other users?\nThese questions guide the visualizations presented in the project, which examine patterns of political identity, participation inequality, conversational structure, and engagement in online Brexit discussions."
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Project Overview",
+    "section": "References",
+    "text": "References\nBossetta, M., Dutceac Segesten, A., & Bonacci, D. (2023). Reconceptualizing Cross-Cutting Political Expression on Social Media: A Case Study of Facebook Comments During the 2016 Brexit Referendum. Political Communication, 40(6), 719–741. https://doi.org/10.1080/10584609.2023.2222370\nBossetta, M. (2022). Reconceptualizing cross-cutting political expression on social media: A case study of Facebook comments during the 2016 Brexit referendum [Data set]. Open Science Framework. https://osf.io/phaeg"
+  }
+]
