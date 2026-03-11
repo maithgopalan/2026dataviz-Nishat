@@ -2,7 +2,7 @@
 title: "Aggression and Engagement"
 ---
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
 library(scales)
 library(ggrepel)
@@ -48,7 +48,7 @@ Because reaction counts are highly skewed, a few comments receive much more enga
 
 ## Draft version
 
-```{r}
+```{r echo=FALSE}
 ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reactions)) +
   geom_point(alpha = 0.3) +
   labs(
@@ -64,7 +64,7 @@ The draft used the raw reaction scale, which compressed most points near the bot
 
 ## Final Version
 
-```{r}
+```{r echo=FALSE}
 ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reactions)) +
   geom_point(color = "gray75", alpha = 0.35, size = 2) +
   geom_point(

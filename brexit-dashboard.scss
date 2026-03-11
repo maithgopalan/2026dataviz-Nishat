@@ -1,0 +1,69 @@
+/*-- scss:defaults --*/
+
+/* Main theme colors */
+$primary: #2C3E50;
+$secondary: #E67E22;
+$body-bg: #FAFAFA;
+$body-color: #2D2D2D;
+
+/* Navbar */
+$navbar-bg: #2C3E50;
+$navbar-fg: #FFFFFF;
+
+/* Dashboard cards */
+$card-bg: #FFFFFF;
+
+/*-- scss:rules --*/
+
+/* Navbar styling */
+.navbar {
+  font-weight: 600;
+  border-bottom: 3px solid #E67E22;
+}
+
+.navbar-title {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Dashboard cards */
+.quarto-dashboard .card {
+  border-radius: 10px;
+  border: 1px solid #E0E0E0;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+.quarto-dashboard .card-header {
+  font-weight: 700;
+  background-color: #F4F6F7;
+}
+
+/* Value boxes */
+.value-box {
+  border-radius: 10px;
+}
+
+/* Tabs */
+.nav-tabs .nav-link {
+  font-weight: 600;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #E67E22;
+  color: white;
+}
+
+/* Plot spacing */
+.quarto-dashboard .card-body {
+  padding: 18px;
+}
+
+/* Titles */
+h1,h2,h3{
+  font-weight:700;
+}
+
+/* Improve readability */
+p{
+  line-height:1.6;
+}

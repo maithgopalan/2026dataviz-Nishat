@@ -2,7 +2,7 @@
 title: "Like-Minded vs Cross-Cutting Exchange"
 ---
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
 library(scales)
 library(here)
@@ -47,7 +47,7 @@ A \*\*cross-cutting exchange\*\* happens when people engage with people holding 
 
 ## Draft version
 
-```{r}
+```{r echo=FALSE}
 ggplot(exchange_summary, aes(x = Cross_Cutting_without_Counters, y = n, fill = Cross_Cutting_without_Counters)) +
   geom_col() +
   labs(
@@ -64,7 +64,7 @@ The first version showed the counts, but it did not clearly explain what like-mi
 
 ## Final version
 
-```{r}
+```{r echo=FALSE}
 ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y = n, fill = Cross_Cutting_without_Counters)) +
   geom_col(width = 0.7, show.legend = FALSE) +
   geom_text(aes(label = comma(n)), vjust = -0.3, size = 4) +

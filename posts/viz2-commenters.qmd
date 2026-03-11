@@ -2,7 +2,7 @@
 title: "viz-2 commenters"
 ---
 
-```{r}
+```{r echo=FALSE}
 library(tidyverse)
 library(scales)
 library(ggrepel)
@@ -53,7 +53,7 @@ This visualization examines whether participation in Brexit comment discussions 
 
 ## Draft Version
 
-```{r}
+```{r echo=FALSE}
 ggplot(top10, aes(x = reorder(participant_label, n_comments), y = n_comments)) +
   geom_col(fill = "steelblue") +
   coord_flip() +
@@ -71,7 +71,7 @@ The draft only showed the ten most active users. While readable, it did not show
 
 ## Final version
 
-```{r}
+```{r echo=FALSE}
 ggplot(comment_counts, aes(x = rank, y = n_comments)) +
   geom_col(fill = "grey85", width = 0.9) +
   geom_col(

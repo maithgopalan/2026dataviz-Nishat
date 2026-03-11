@@ -6,7 +6,7 @@ format:
     orientation: rows
     scrolling: true
     embed-resources: true
-    theme: [cosmo, brexit-dashboard.scss]
+    theme: [cosmo, styles.scss]
 ---
 
 ```{r}
