@@ -3,27 +3,59 @@ project:
   output-dir: docs 
 
 website:
-  description: "Parvez_Final Project Blog"
-  site-url: https://github.com/Dorin2017/Final-Project-Blog-1.git 
-  title: "PS-3"
+  site-url: https://dorin2017.github.io/Final-Project-Blog-1/ 
+  title: "Brexit Social Media Interaction Analysis"
   navbar:
     left: 
       - href: index.qmd
         text: Home
-      - href: blog.qmd
-        text: Blog
-      - href: viz.qmd
-        text: Visualizations
-      
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/
- 
+        
+      - href: dashboard.qmd
+        text: Dashboard
+        
+      - text: Visualizations
+        menu:
+          - href: posts/viz1-aggression.qmd
+            text: Aggression by Political Identity
+            
+          - href: posts/viz2-commenters.qmd
+            text: Comment Participation Concentration
+            
+          - href: posts/viz3-exchange.qmd
+            text: Like-Minded vs Cross-Cutting Exchange
+            
+          - href: posts/viz4-engagement.qmd
+            text: Aggression and Engagement
+
 format:
   html:
     theme: cosmo
     css: styles.css
+    navbar
+    * Navbar styling */
+.navbar {
+  font-weight: 600;
+}
+
+/* Dashboard cards */
+.quarto-dashboard .card {
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Card headers */
+.quarto-dashboard .card-header {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+/* Plot titles */
+h1, h2, h3 {
+  letter-spacing: 0.3px;}
+    toc: false
+    code-fold: false
+    fig-width: 8
+    fig-height: 5
 
 editor: visual
 
