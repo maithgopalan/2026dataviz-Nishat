@@ -8,11 +8,11 @@ library(tidyverse)
 library(janitor)
 library(scales)
 library(patchwork)
+library(here)
 ```
 
 ```{r}
-view(brexit_data)
-names(brexit_data)
+brexit_data <- read_csv(here("data","Brexit 5000 Sample Anonymized.csv"))
 ```
 
 ## Clean the variables
@@ -115,6 +115,15 @@ ggplot(
 
 ```{r}
 library(ggrepel)
+
+comment_counts <- brexit_data %>%
+  count(Commenter_ID, name = "n_comments") %>%
+  arrange(desc(n_comments)) %>%
+  mutate(rank = row_number())
+
+top_users <- comment_counts %>%
+  slice_max(n_comments, n = 8) %>%
+  mutate(label = paste("User", rank))
 
 top_users <- comment_counts %>%
   slice_max(n_comments, n = 8) %>%
