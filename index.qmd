@@ -100,3 +100,9 @@ Together, these variables allow us to explore several key questions about online
 -   Do more aggressive comments attract **more engagement** from other users?
 
     These questions guide the visualizations presented in the project, which examine patterns of political identity, participation inequality, conversational structure, and engagement in online Brexit discussions.
+
+## References
+
+Bossetta, M., Dutceac Segesten, A., & Bonacci, D. (2023). Reconceptualizing Cross-Cutting Political Expression on Social Media: A Case Study of Facebook Comments During the 2016 Brexit Referendum. *Political Communication*, *40*(6), 719–741. https://doi.org/10.1080/10584609.2023.2222370
+
+**Bossetta, M.** (2022). *Reconceptualizing cross-cutting political expression on social media: A case study of Facebook comments during the 2016 Brexit referendum* \[Data set\]. Open Science Framework. https://osf.io/phaeg
