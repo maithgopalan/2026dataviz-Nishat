@@ -1,0 +1,95 @@
+---
+title: "Aggression and Engagement"
+---
+
+```{r}
+library(tidyverse)
+library(scales)
+library(ggrepel)
+library(here)
+
+brexit_data <- read_csv(
+  here("data", "Brexit 5000 Sample Anonymized.csv")
+) %>%
+  mutate(
+    Commenter_BA_Score = as.numeric(Commenter_BA_Score),
+    Commenter_Total_Reactions = parse_number(as.character(Commenter_Total_Reactions)),
+    Brexit_Attitude = factor(
+      Brexit_Attitude,
+      levels = c("Brexiteer", "Remainer", "Unknown")
+    ),
+    Cross_Cutting_without_Counters = recode(
+      Cross_Cutting_without_Counters,
+      "Like_Minded" = "Like-minded",
+      "Cross_Cutting" = "Cross-cutting",
+      "Unknown" = "Unknown"
+    )
+  )
+
+engagement_data <- brexit_data %>%
+  filter(
+    !is.na(Commenter_BA_Score),
+    !is.na(Commenter_Total_Reactions),
+    Commenter_Total_Reactions > 0
+  )
+
+label_data <- engagement_data %>%
+  slice_max(Commenter_Total_Reactions, n = 6) %>%
+  mutate(label = paste("Comment", row_number()))
+```
+
+Why this matters\
+\
+This visualization examines whether comments with stronger tone received more engagement from other users.\
+\
+\`Commenter_Total_Reactions\` measures how many reactions a comment received, while \`Commenter_BA_Score\` captures the tone score associated with the comment.\
+\
+Because reaction counts are highly skewed, a few comments receive much more engagement than most others. A log scale makes that pattern easier to interpret.\
+
+## Draft version
+
+```{r}
+ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reactions)) +
+  geom_point(alpha = 0.3) +
+  labs(
+    title = "Draft: Aggression and reactions",
+    x = "Commenter BA score",
+    y = "Total reactions"
+  ) +
+  theme_minimal()
+```
+
+What was missing in the draft\
+The draft used the raw reaction scale, which compressed most points near the bottom because a few comments received very high reaction counts. It also did not help the reader identify unusually high-engagement comments.
+
+## Final Version
+
+```{r}
+ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reactions)) +
+  geom_point(color = "gray75", alpha = 0.35, size = 2) +
+  geom_point(
+    data = label_data,
+    color = "#C55644",
+    size = 3
+  ) +
+  geom_smooth(method = "lm", se = TRUE, color = "gray20") +
+  geom_text_repel(
+    data = label_data,
+    aes(label = label),
+    size = 3.5,
+    box.padding = 0.3
+  ) +
+  scale_y_log10(labels = comma) +
+  labs(
+    title = "Higher-engagement comments often had stronger tone scores",
+    subtitle = "Highlighted points mark the most reacted-to comments; reactions are shown on a log scale",
+    x = "Commenter BA score",
+    y = "Total reactions (log scale)"
+  ) +
+  theme_minimal(base_size = 14) +
+  theme(
+    plot.title = element_text(face = "bold"),
+    plot.subtitle = element_text(color = "gray35"),
+    panel.grid.minor = element_blank()
+  )
+```
