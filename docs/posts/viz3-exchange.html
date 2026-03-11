@@ -149,53 +149,11 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.1     ✔ stringr   1.5.1
-✔ ggplot2   4.0.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.2
-✔ purrr     1.0.4     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-
-Attaching package: 'scales'
-
-
-The following object is masked from 'package:purrr':
-
-    discard
-
-
-The following object is masked from 'package:readr':
-
-    col_factor
-
-
-here() starts at /Users/nishi/Desktop/EDLD 652 Winter 2026/PS-3
-
-New names:
-Rows: 5000 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (10): Commenter_ID, Comment_ID, Date, Brexit_Attitude, Commenter_Total_R...
-dbl  (4): ...1, Argument, Commenter_BA_Score, Chain_Comment
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-</div>
-</div>
-<p>Why this matters<br>
-<br>
-This visualization examines whether Brexit discussion mostly happened among people who shared the same political views or whether people often engaged across disagreement.<br>
+<p>This visualization examines whether Brexit discussion mostly happened among people who shared the same political views or whether people often engaged across disagreement.<br>
 <br>
 A **like-minded exchange** happens when people interact with others in the same political camp.<br>
 <br>
-A **cross-cutting exchange** happens when people engage with people holding different political views.<br>
-</p>
+A **cross-cutting exchange** happens when people engage with people holding different political views.</p>
 <section id="draft-version" class="level2">
 <h2 class="anchored" data-anchor-id="draft-version">Draft version</h2>
 <div class="cell">
@@ -207,10 +165,11 @@ A **cross-cutting exchange** happens when people engage with people holding diff
 </div>
 </div>
 </div>
-<p>What was missing in the draft<br>
-<br>
-The first version showed the counts, but it did not clearly explain what like-minded and cross-cutting exchange meant. It also did not emphasize the larger story that discussion was much more likely to stay within the same political camp.<br>
+<section id="what-was-missing-in-the-draft" class="level3">
+<h3 class="anchored" data-anchor-id="what-was-missing-in-the-draft">What was missing in the draft</h3>
+<p>The first version showed the counts, but it did not clearly explain what like-minded and cross-cutting exchange meant. It also did not emphasize the larger story that discussion was much more likely to stay within the same political camp.<br>
 </p>
+</section>
 </section>
 <section id="final-version" class="level2">
 <h2 class="anchored" data-anchor-id="final-version">Final version</h2>
@@ -223,12 +182,12 @@ The first version showed the counts, but it did not clearly explain what like-mi
 </div>
 </div>
 </div>
-</section>
-<section id="interpretation" class="level2">
-<h2 class="anchored" data-anchor-id="interpretation">Interpretation</h2>
+<section id="interpretation" class="level3">
+<h3 class="anchored" data-anchor-id="interpretation">Interpretation</h3>
 <p>This visualization shows that Brexit discussion was much more likely to occur in like-minded settings than across political disagreement. Out of all coded exchanges, the majority were like-minded rather than cross-cutting. I revised the chart by adding clearer labels, a more informative subtitle, and percentages inside the bars so that readers can immediately understand both the concept and the scale of the pattern.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

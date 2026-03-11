@@ -1,9 +1,13 @@
 ---
-title: "viz-1-aggression"
+title: "Aggression by Political Identity"
 format: html
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-```{r echo=FALSE}
+```{r}
 library(tidyverse)
 library(janitor)
 library(scales)
@@ -11,13 +15,15 @@ library(patchwork)
 library(here)
 ```
 
-```{r echo=FALSE}
+```{r}
 brexit_data <- read_csv(here("data","Brexit 5000 Sample Anonymized.csv"))
 ```
 
-## Clean the variables
+This visualization examines whether political identity is associated with differences in comment tone. Understanding this helps show whether discussions are polarized or balanced across groups.
 
-```{r echo=FALSE}
+## Clean variables
+
+```{r}
 brexit_data <- brexit_data %>%
   mutate(
     
@@ -52,9 +58,11 @@ table(brexit_data$Brexit_Attitude)
 table(brexit_data$Cross_Cutting_without_Counters)
 ```
 
+## Draft Version
+
 ### Behavioral aggression by Brexit Identity
 
-```{r echo=FALSE}
+```{r}
 ggplot(
   brexit_data %>% filter(!is.na(Commenter_BA_Score)),
   aes(x = Commenter_BA_Score, fill = Brexit_Attitude)
@@ -71,19 +79,42 @@ ggplot(
   theme_minimal()
 ```
 
-```{r echo=FALSE}
+```{r}
+library(knitr)
+library(kableExtra)
+
 brexit_data %>%
   group_by(Brexit_Attitude) %>%
   summarise(
-    n_comments = n(),
-    mean_aggression = mean(Commenter_BA_Score, na.rm = TRUE),
-    median_aggression = median(Commenter_BA_Score, na.rm = TRUE)
+    Comments = comma(n()),
+    Mean_Aggression = round(mean(Commenter_BA_Score, na.rm = TRUE), 2),
+    Median_Aggression = round(median(Commenter_BA_Score, na.rm = TRUE), 2),
+    .groups = "drop"
+  ) %>%
+  rename(
+    `Political Identity` = Brexit_Attitude,
+    `Number of Comments` = Comments,
+    `Mean Aggression Score` = Mean_Aggression,
+    `Median Aggression Score` = Median_Aggression
+  ) %>%
+  kable(
+    caption = "Aggression scores by political identity",
+    align = "c"
+  ) %>%
+  kable_styling(
+    full_width = FALSE,
+    bootstrap_options = c("striped","hover","condensed")
   )
+
 ```
+
+The table shows strong polarization in comment tone across Brexit political identities. Brexiteer comments (3,613) have an average aggression score of **0.99** (median = **1**), while Remainer comments (781) average **–0.97** (median = **–1**), indicating clear separation between the two groups. The Unknown group (606 comments) centers at **0**, suggesting neutral or unclear positioning. The close alignment between mean and median values suggests these patterns are consistent across comments rather than driven by a few extreme observations, providing evidence of systematic differences in tone by political identity.
+
+The draft visualization made comparison difficult because all distributions overlapped in one panel. The lack of clear group separation made it difficult to compare differences across political identities. It also did not include reference markers such as means to guide interpretation.
 
 # Final version
 
-```{r echo=FALSE}
+```{r}
 agg_summary <- brexit_data %>%
   filter(!is.na(Commenter_BA_Score)) %>%
   group_by(Brexit_Attitude) %>%
@@ -113,7 +144,7 @@ ggplot(
   theme_minimal()
 ```
 
-```{r echo=FALSE}
+```{r}
 library(ggrepel)
 
 comment_counts <- brexit_data %>%
@@ -162,7 +193,7 @@ ggplot(comment_counts, aes(x = rank, y = n_comments)) +
   )
 ```
 
-### why this version is better
+### Why this version is better?
 
 It fixes several visual problems:
 

@@ -1,8 +1,19 @@
 ---
 title: "Like-Minded vs Cross-Cutting Exchange"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-```{r echo=FALSE}
+This visualization examines whether Brexit discussion mostly happened among people who shared the same political views or whether people often engaged across disagreement.\
+\
+A \*\*like-minded exchange\*\* happens when people interact with others in the same political camp.\
+\
+A \*\*cross-cutting exchange\*\* happens when people engage with people holding different political views.
+
+```{r}
 library(tidyverse)
 library(scales)
 library(here)
@@ -37,17 +48,9 @@ exchange_summary <- brexit_data %>%
     
 ```
 
-Why this matters\
-\
-This visualization examines whether Brexit discussion mostly happened among people who shared the same political views or whether people often engaged across disagreement.\
-\
-A \*\*like-minded exchange\*\* happens when people interact with others in the same political camp.\
-\
-A \*\*cross-cutting exchange\*\* happens when people engage with people holding different political views.\
-
 ## Draft version
 
-```{r echo=FALSE}
+```{r}
 ggplot(exchange_summary, aes(x = Cross_Cutting_without_Counters, y = n, fill = Cross_Cutting_without_Counters)) +
   geom_col() +
   labs(
@@ -58,13 +61,13 @@ ggplot(exchange_summary, aes(x = Cross_Cutting_without_Counters, y = n, fill = C
   theme_minimal()
 ```
 
-What was missing in the draft\
-\
+### What was missing in the draft
+
 The first version showed the counts, but it did not clearly explain what like-minded and cross-cutting exchange meant. It also did not emphasize the larger story that discussion was much more likely to stay within the same political camp.\
 
 ## Final version
 
-```{r echo=FALSE}
+```{r}
 ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y = n, fill = Cross_Cutting_without_Counters)) +
   geom_col(width = 0.7, show.legend = FALSE) +
   geom_text(aes(label = comma(n)), vjust = -0.3, size = 4) +
@@ -92,6 +95,6 @@ ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y 
   )
 ```
 
-## Interpretation
+### Interpretation
 
 This visualization shows that Brexit discussion was much more likely to occur in like-minded settings than across political disagreement. Out of all coded exchanges, the majority were like-minded rather than cross-cutting. I revised the chart by adding clearer labels, a more informative subtitle, and percentages inside the bars so that readers can immediately understand both the concept and the scale of the pattern.

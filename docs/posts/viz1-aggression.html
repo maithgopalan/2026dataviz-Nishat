@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>viz-1-aggression – Brexit Social Media Interaction Analysis</title>
+<title>Aggression by Political Identity – Brexit Social Media Interaction Analysis</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,6 +68,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -125,7 +127,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">viz-1-aggression</h1>
+      <h1 class="title">Aggression by Political Identity</h1>
                       </div>
   </div>
     
@@ -149,59 +151,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.1     ✔ stringr   1.5.1
-✔ ggplot2   4.0.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.2
-✔ purrr     1.0.4     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors
-
-Attaching package: 'janitor'
-
-
-The following objects are masked from 'package:stats':
-
-    chisq.test, fisher.test
-
-
-
-Attaching package: 'scales'
-
-
-The following object is masked from 'package:purrr':
-
-    discard
-
-
-The following object is masked from 'package:readr':
-
-    col_factor
-
-
-here() starts at /Users/nishi/Desktop/EDLD 652 Winter 2026/PS-3</code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="cell-output cell-output-stderr">
-<pre><code>New names:
-Rows: 5000 Columns: 14
-── Column specification
-──────────────────────────────────────────────────────── Delimiter: "," chr
-(10): Commenter_ID, Comment_ID, Date, Brexit_Attitude, Commenter_Total_R... dbl
-(4): ...1, Argument, Commenter_BA_Score, Chain_Comment
-ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-Specify the column types or set `show_col_types = FALSE` to quiet this message.
-• `` -&gt; `...1`</code></pre>
-</div>
-</div>
-<section id="clean-the-variables" class="level2">
-<h2 class="anchored" data-anchor-id="clean-the-variables">Clean the variables</h2>
+<p>This visualization examines whether political identity is associated with differences in comment tone. Understanding this helps show whether discussions are polarized or balanced across groups.</p>
+<section id="clean-variables" class="level2">
+<h2 class="anchored" data-anchor-id="clean-variables">Clean variables</h2>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -214,6 +166,9 @@ Cross-cutting   Like-minded       Unknown
          1097          3304           599 </code></pre>
 </div>
 </div>
+</section>
+<section id="draft-version" class="level2">
+<h2 class="anchored" data-anchor-id="draft-version">Draft Version</h2>
 <section id="behavioral-aggression-by-brexit-identity" class="level3">
 <h3 class="anchored" data-anchor-id="behavioral-aggression-by-brexit-identity">Behavioral aggression by Brexit Identity</h3>
 <div class="cell">
@@ -226,15 +181,42 @@ Cross-cutting   Like-minded       Unknown
 </div>
 </div>
 <div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 4
-  Brexit_Attitude n_comments mean_aggression median_aggression
-  &lt;fct&gt;                &lt;int&gt;           &lt;dbl&gt;             &lt;dbl&gt;
-1 Brexiteer             3613           0.985                 1
-2 Remainer               781          -0.970                -1
-3 Unknown                606           0                     0</code></pre>
+<div class="cell-output-display">
+<table class="table table-striped table-hover table-condensed caption-top table-sm small">
+<caption>Aggression scores by political identity</caption>
+<thead>
+<tr class="header">
+<th style="text-align: center;" data-quarto-table-cell-role="th">Political Identity</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Number of Comments</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Mean Aggression Score</th>
+<th style="text-align: center;" data-quarto-table-cell-role="th">Median Aggression Score</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Brexiteer</td>
+<td style="text-align: center;">3,613</td>
+<td style="text-align: center;">0.99</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Remainer</td>
+<td style="text-align: center;">781</td>
+<td style="text-align: center;">-0.97</td>
+<td style="text-align: center;">-1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Unknown</td>
+<td style="text-align: center;">606</td>
+<td style="text-align: center;">0.00</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<p>The table shows strong polarization in comment tone across Brexit political identities. Brexiteer comments (3,613) have an average aggression score of <strong>0.99</strong> (median = <strong>1</strong>), while Remainer comments (781) average <strong>–0.97</strong> (median = <strong>–1</strong>), indicating clear separation between the two groups. The Unknown group (606 comments) centers at <strong>0</strong>, suggesting neutral or unclear positioning. The close alignment between mean and median values suggests these patterns are consistent across comments rather than driven by a few extreme observations, providing evidence of systematic differences in tone by political identity.</p>
+<p>The draft visualization made comparison difficult because all distributions overlapped in one panel. The lack of clear group separation made it difficult to compare differences across political identities. It also did not include reference markers such as means to guide interpretation.</p>
 </section>
 </section>
 <section id="final-version" class="level1">
@@ -258,7 +240,7 @@ Cross-cutting   Like-minded       Unknown
 </div>
 </div>
 <section id="why-this-version-is-better" class="level3">
-<h3 class="anchored" data-anchor-id="why-this-version-is-better">why this version is better</h3>
+<h3 class="anchored" data-anchor-id="why-this-version-is-better">Why this version is better?</h3>
 <p>It fixes several visual problems:</p>
 <ol type="1">
 <li><p>Highlights important information Instead of thousands of identical bars, it highlights the top commenters.</p></li>
