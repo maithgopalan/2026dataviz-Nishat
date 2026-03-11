@@ -1,8 +1,13 @@
 ---
-title: "viz-2 commenters"
+title: "Comment Participation Concentration"
+format: html
+execute:
+  echo: false
+  warning: false
+  message: false
 ---
 
-```{r echo=FALSE}
+```{r}
 library(tidyverse)
 library(scales)
 library(ggrepel)
@@ -47,13 +52,11 @@ top_users <- comment_counts %>%
 
 ```
 
-\## Why this matters\
-\
 This visualization examines whether participation in Brexit comment discussions is broadly shared or dominated by a small number of highly active users. Participant IDs are anonymized and are \*\*not shown\*\* in the final graph.
 
 ## Draft Version
 
-```{r echo=FALSE}
+```{r}
 ggplot(top10, aes(x = reorder(participant_label, n_comments), y = n_comments)) +
   geom_col(fill = "steelblue") +
   coord_flip() +
@@ -71,7 +74,7 @@ The draft only showed the ten most active users. While readable, it did not show
 
 ## Final version
 
-```{r echo=FALSE}
+```{r}
 ggplot(comment_counts, aes(x = rank, y = n_comments)) +
   geom_col(fill = "grey85", width = 0.9) +
   geom_col(
