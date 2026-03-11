@@ -7,4 +7,160 @@ format: html
 library(tidyverse)
 library(janitor)
 library(scales)
-install.packages("ggrepel")
+library(patchwork)
+```
+
+```{r}
+view(brexit_data)
+names(brexit_data)
+```
+
+## Clean the variables
+
+```{r}
+brexit_data <- brexit_data %>%
+  mutate(
+    
+    Brexit_Attitude = factor(
+      Brexit_Attitude,
+      levels = c("Brexiteer", "Remainer", "Unknown")
+    ),
+    
+    Cross_Cutting_without_Counters = recode(
+      Cross_Cutting_without_Counters,
+      "Like_Minded" = "Like-minded",
+      "Cross_Cutting" = "Cross-cutting",
+      "Unknown" = "Unknown"
+    ),
+    
+    Cross_Cutting_w_Counters = recode(
+      Cross_Cutting_w_Counters,
+      "Like_Minded" = "Like-minded",
+      "Cross_Cutting" = "Cross-cutting",
+      "Unknown" = "Unknown"
+    ),
+    
+    Comment_Type = str_replace_all(Comment_Type, "_", " "),
+    
+    Chain_Comment = factor(
+      Chain_Comment,
+      levels = c(0,1),
+      labels = c("Standalone","Chain")
+    ))
+
+table(brexit_data$Brexit_Attitude)
+table(brexit_data$Cross_Cutting_without_Counters)
+```
+
+### Behavioral aggression by Brexit Identity
+
+```{r}
+ggplot(
+  brexit_data %>% filter(!is.na(Commenter_BA_Score)),
+  aes(x = Commenter_BA_Score, fill = Brexit_Attitude)
+) +
+  geom_density(alpha = 0.5) +
+  facet_wrap(~Brexit_Attitude, ncol = 1) +
+  labs(
+    title = "Behavioral aggression differs across Brexit political identities",
+    subtitle = "Higher scores indicate more aggressive or hostile comment language",
+    x = "Behavioral aggression score",
+    y = "Density",
+    fill = "Brexit identity"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+brexit_data %>%
+  group_by(Brexit_Attitude) %>%
+  summarise(
+    n_comments = n(),
+    mean_aggression = mean(Commenter_BA_Score, na.rm = TRUE),
+    median_aggression = median(Commenter_BA_Score, na.rm = TRUE)
+  )
+```
+
+#Final version
+
+```{r}
+agg_summary <- brexit_data %>%
+  filter(!is.na(Commenter_BA_Score)) %>%
+  group_by(Brexit_Attitude) %>%
+  summarise(
+    mean_aggression = mean(Commenter_BA_Score, na.rm = TRUE)
+  )
+
+ggplot(
+  brexit_data %>% filter(!is.na(Commenter_BA_Score)),
+  aes(x = Commenter_BA_Score, fill = Brexit_Attitude)
+) +
+  geom_density(alpha = 0.55, color = NA) +
+  geom_vline(
+    data = agg_summary,
+    aes(xintercept = mean_aggression),
+    linetype = "dashed",
+    color = "black"
+  ) +
+  facet_wrap(~Brexit_Attitude, ncol = 1) +
+  labs(
+    title = "Behavioral aggression differs across Brexit political identities",
+    subtitle = "Higher scores indicate more aggressive or hostile comment language; dashed lines show group means",
+    x = "Behavioral aggression score",
+    y = "Density",
+    fill = "Brexit identity"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+library(ggrepel)
+
+top_users <- comment_counts %>%
+  slice_max(n_comments, n = 8) %>%
+  mutate(label = paste("User", rank))
+
+ggplot(comment_counts, aes(x = rank, y = n_comments)) +
+  
+  geom_col(fill = "grey80", width = 0.9) +
+  
+  geom_col(
+    data = top_users,
+    fill = "#C55644",
+    width = 0.9
+  ) +
+  
+  geom_text_repel(
+    data = top_users,
+    aes(label = label),
+    size = 3.5,
+    box.padding = 0.3
+  ) +
+  
+  labs(
+    title = "A small number of users dominate the Brexit comment discussion",
+    subtitle = "Most participants comment once, while a few contribute repeatedly",
+    x = "Commenter rank",
+    y = "Number of comments"
+  ) +
+  
+  theme_minimal(base_size = 14) +
+  
+  theme(
+    plot.title = element_text(face = "bold"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor = element_blank()
+  )
+```
+
+### why this version is better
+
+It fixes several visual problems:
+
+1.  Highlights important information Instead of thousands of identical bars, it highlights the top commenters.
+
+2.  Makes the story clearer The title now tells the story: “A small number of users dominate the discussion.”
+
+3.  Labels extreme cases ggrepel prevents overlapping labels.
+
+This visualization shows that participation in the Brexit discussion is highly concentrated. While thousands of users contributed at least one comment, most posted only once. A small minority of highly active participants contributed many more comments than the average user. I revised the draft visualization to highlight these extreme contributors while keeping the full distribution visible.
