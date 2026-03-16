@@ -71,7 +71,7 @@ pct_once <- mean(comment_counts$n_comments == 1)
 pct_two_or_less <- mean(comment_counts$n_comments <= 2)
 ```
 
-\# Sidebar {.sidebar}
+# Sidebar {.sidebar}
 
 \*\*Project Overview\*\*\
 \
@@ -91,11 +91,7 @@ This dashboard analyzes \*\*5,000 anonymized Brexit-related social media comment
 3. Are discussions more like-minded than cross-cutting?\
 4. Do comments with stronger tone scores attract more reactions?
 
-\# Dashboard Overview\
-\
-\## Row {height="150px"}\
-\
-\### {width="25%"}
+# Dashboard Overview \## Row {height="150px"} \# {width="25%"}
 
 ```{r}
 #| content: valuebox
