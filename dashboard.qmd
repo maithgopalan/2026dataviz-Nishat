@@ -80,23 +80,23 @@ This dashboard analyzes **5,000 anonymized Brexit-related social media comments*
 
 **Key Variables**
 
-- **Commenter_BA_Score**: tone score associated with the comment
-- **Brexit_Attitude**: Brexiteer, Remainer, or Unknown
-- **Cross_Cutting_without_Counters**: whether exchange is like-minded or cross-cutting
-- **Commenter_Total_Reactions**: total reactions received by a comment
+-   **Commenter_BA_Score**: tone score associated with the comment
+-   **Brexit_Attitude**: Brexiteer, Remainer, or Unknown
+-   **Cross_Cutting_without_Counters**: whether exchange is like-minded or cross-cutting
+-   **Commenter_Total_Reactions**: total reactions received by a comment
 
 **Core Questions**
 
-1. Do comment tone scores differ across Brexit political identities?
-2. Is participation broadly shared, or dominated by a small number of users?
-3. Are discussions more like-minded than cross-cutting?
-4. Do comments with stronger tone scores attract more reactions?
+1.  Do comment tone scores differ across Brexit political identities?
+2.  Is participation broadly shared, or dominated by a small number of users?
+3.  Are discussions more like-minded than cross-cutting?
+4.  Do comments with stronger tone scores attract more reactions?
 
 # Dashboard Overview
 
 ## Row {height="150px"}
 
-### {width="25%"}
+###  {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -104,7 +104,7 @@ This dashboard analyzes **5,000 anonymized Brexit-related social media comments*
 list(icon = "chat-dots-fill", color = "white", value = comma(n_comments))
 ```
 
-### {width="25%"}
+###  {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -112,7 +112,7 @@ list(icon = "chat-dots-fill", color = "white", value = comma(n_comments))
 list(icon = "people-fill", color = "white", value = comma(n_commenters))
 ```
 
-### {width="25%"}
+###  {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -120,7 +120,7 @@ list(icon = "people-fill", color = "white", value = comma(n_commenters))
 list(icon = "diagram-3-fill", color = "white", value = percent(like_minded_share, accuracy = 0.1))
 ```
 
-### {width="25%"}
+###  {width="25%"}
 
 ```{r}
 #| content: valuebox
