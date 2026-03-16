@@ -5,8 +5,9 @@ format:
     orientation: rows
     scrolling: true
     embed-resources: true
-    theme: cosmo
-    css: brexit-dashboard.scss
+    theme:
+      - cosmo
+      - brexit-dashboard.scss
 execute:
   echo: false
   warning: false
@@ -73,25 +74,29 @@ pct_two_or_less <- mean(comment_counts$n_comments <= 2)
 
 # Sidebar {.sidebar}
 
-\*\*Project Overview\*\*\
-\
-This dashboard analyzes \*\*5,000 anonymized Brexit-related social media comments\*\* to examine political identity, participation concentration, conversational structure, and engagement.
+**Project Overview**
 
-\*\*Key Variables\*\*\
-\
-- \*\*Commenter_BA_Score\*\*: tone score associated with the comment\
-- \*\*Brexit_Attitude\*\*: Brexiteer, Remainer, or Unknown\
-- \*\*Cross_Cutting_without_Counters\*\*: whether exchange is like-minded or cross-cutting\
-- \*\*Commenter_Total_Reactions\*\*: total reactions received by a comment\
-\
-\*\*Core Questions\*\*\
-\
-1. Do comment tone scores differ across Brexit political identities?\
-2. Is participation broadly shared, or dominated by a small number of users?\
-3. Are discussions more like-minded than cross-cutting?\
+This dashboard analyzes **5,000 anonymized Brexit-related social media comments** to examine political identity, participation concentration, conversational structure, and engagement.
+
+**Key Variables**
+
+- **Commenter_BA_Score**: tone score associated with the comment
+- **Brexit_Attitude**: Brexiteer, Remainer, or Unknown
+- **Cross_Cutting_without_Counters**: whether exchange is like-minded or cross-cutting
+- **Commenter_Total_Reactions**: total reactions received by a comment
+
+**Core Questions**
+
+1. Do comment tone scores differ across Brexit political identities?
+2. Is participation broadly shared, or dominated by a small number of users?
+3. Are discussions more like-minded than cross-cutting?
 4. Do comments with stronger tone scores attract more reactions?
 
-# Dashboard Overview \## Row {height="150px"} \# {width="25%"}
+# Dashboard Overview
+
+## Row {height="150px"}
+
+### {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -99,7 +104,7 @@ This dashboard analyzes \*\*5,000 anonymized Brexit-related social media comment
 list(icon = "chat-dots-fill", color = "white", value = comma(n_comments))
 ```
 
-\### {width="25%"}
+### {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -107,7 +112,7 @@ list(icon = "chat-dots-fill", color = "white", value = comma(n_comments))
 list(icon = "people-fill", color = "white", value = comma(n_commenters))
 ```
 
-\### {width="25%"}
+### {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -115,7 +120,7 @@ list(icon = "people-fill", color = "white", value = comma(n_commenters))
 list(icon = "diagram-3-fill", color = "white", value = percent(like_minded_share, accuracy = 0.1))
 ```
 
-\### {width="25%"}
+### {width="25%"}
 
 ```{r}
 #| content: valuebox
@@ -123,14 +128,13 @@ list(icon = "diagram-3-fill", color = "white", value = percent(like_minded_share
 list(icon = "bar-chart-fill", color = "white", value = percent(pct_once, accuracy = 0.1))
 ```
 
-\# Visualization 1: Aggression by Political Identity\
-\
-\## Row {.tabset height="520px"}\
-\
-\### Version 1 {layout-ncol="1"}
+# Visualization 1: Aggression by Political Identity
+
+## Row {.tabset height="520px"}
+
+### Version 1 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p1_v1 <- ggplot(
   brexit_data %>% filter(!is.na(Commenter_BA_Score)),
   aes(x = Commenter_BA_Score, fill = Brexit_Attitude)
@@ -144,13 +148,11 @@ p1_v1 <- ggplot(
 
 ggplotly(p1_v1, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
-
 ```
 
 ### Version 2 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 agg_summary <- brexit_data %>%
   filter(!is.na(Commenter_BA_Score)) %>%
   group_by(Brexit_Attitude) %>%
@@ -179,10 +181,9 @@ ggplotly(p1_v2, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Best Version {layout-ncol="1"}
+### Best Version {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p1_best <- p1_v2 +
   labs(
     title = "Comment tone differs sharply across Brexit identities",
@@ -198,14 +199,13 @@ ggplotly(p1_best, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\# Visualization 2: Comment Participation Concentration\
-\
-\## Row {.tabset height="520px"}\
-\
-\### Version 1 {layout-ncol="1"}
+# Visualization 2: Comment Participation Concentration
+
+## Row {.tabset height="520px"}
+
+### Version 1 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 top10 <- comment_counts %>%
   slice_head(n = 10) %>%
   mutate(user_label = paste("User", row_number()))
@@ -224,10 +224,9 @@ ggplotly(p2_v1, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Version 2 {layout-ncol="1"}
+### Version 2 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p2_v2 <- ggplot(comment_counts, aes(x = rank, y = n_comments)) +
   geom_col(fill = "#d3dce6", width = 0.9) +
   labs(
@@ -240,10 +239,9 @@ ggplotly(p2_v2, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Best Version {layout-ncol="1"}
+### Best Version {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 top_users <- comment_counts %>%
   slice_max(n_comments, n = 8) %>%
   mutate(label = paste("P", rank))
@@ -274,14 +272,13 @@ ggplotly(p2_best, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\# Visualization 3: Like-Minded vs Cross-Cutting Exchange\
-\
-\## Row {.tabset height="520px"}\
-\
-\### Version 1 {layout-ncol="1"}
+# Visualization 3: Like-Minded vs Cross-Cutting Exchange
+
+## Row {.tabset height="520px"}
+
+### Version 1 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 exchange_summary <- brexit_data %>%
   count(Cross_Cutting_without_Counters) %>%
   mutate(prop = n / sum(n))
@@ -294,10 +291,9 @@ ggplotly(p3_v1, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Version 2 {layout-ncol="1"}
+### Version 2 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p3_v2 <- ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y = n)) +
   geom_col(fill = "#6c8ebf") +
   geom_text(aes(label = comma(n)), vjust = -0.3, size = 4) +
@@ -307,10 +303,9 @@ ggplotly(p3_v2, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Best Version {layout-ncol="1"}
+### Best Version {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p3_best <- ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y = n, fill = Cross_Cutting_without_Counters)) +
   geom_col(width = 0.7, show.legend = FALSE) +
   geom_text(aes(label = comma(n)), vjust = -0.3, size = 4) +
@@ -337,14 +332,13 @@ ggplotly(p3_best, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\# Visualization 4: Aggression and Engagement\
-\
-\## Row {.tabset height="520px"}\
-\
-\### Version 1 {layout-ncol="1"}
+# Visualization 4: Aggression and Engagement
+
+## Row {.tabset height="520px"}
+
+### Version 1 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 engagement_data <- brexit_data %>%
   filter(
     !is.na(Commenter_BA_Score),
@@ -358,13 +352,11 @@ p4_v1 <- ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total
 
 ggplotly(p4_v1, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
-
 ```
 
-\### Version 2 {layout-ncol="1"}
+### Version 2 {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 p4_v2 <- ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reactions)) +
   geom_point(color = "gray70", alpha = 0.35, size = 2) +
   geom_smooth(method = "lm", se = TRUE, color = "#274c77") +
@@ -375,10 +367,9 @@ ggplotly(p4_v2, tooltip = c("x", "y")) %>%
   config(displayModeBar = FALSE)
 ```
 
-\### Best Version {layout-ncol="1"}
+### Best Version {layout-ncol="1"}
 
 ```{r}
-#| echo: false
 label_data <- engagement_data %>%
   slice_max(Commenter_Total_Reactions, n = 6) %>%
   mutate(label = paste("Comment", row_number()))
