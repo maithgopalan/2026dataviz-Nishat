@@ -162,7 +162,7 @@ top_users <- comment_counts %>%
 
 ggplot(comment_counts, aes(x = rank, y = n_comments)) +
   
-  geom_col(fill = "grey80", width = 0.9) +
+  geom_col(fill = "cadetblue", width = 0.9) +
   
   geom_col(
     data = top_users,

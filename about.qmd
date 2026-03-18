@@ -1,12 +1,18 @@
 ---
 title: "About"
-image: profile.jpeg
+image: profile.jpg
 about:
   template: jolla
   links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
     - icon: github
       text: Github
-      href: https://github.com/Dorin2017
+      href: https://github.com
 ---
 
 ## Project Focus
@@ -37,6 +43,6 @@ The project involved:\
 
 ## Author
 
-Nishat Parvez \
-PhD Candidate, University of Oregon \
+Nishat Parvez\
+PhD Candidate, University of Oregon\
 EDLD 652 Data Visualization Project

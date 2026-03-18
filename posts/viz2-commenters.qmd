@@ -54,7 +54,7 @@ top_users <- comment_counts %>%
 
 This visualization examines whether participation in Brexit comment discussions is broadly shared or dominated by a small number of highly active users. Participant IDs are anonymized and are \*\*not shown\*\* in the final graph.
 
-## Draft Version
+## Version 1
 
 ```{r}
 ggplot(top10, aes(x = reorder(participant_label, n_comments), y = n_comments)) +
@@ -72,7 +72,7 @@ ggplot(top10, aes(x = reorder(participant_label, n_comments), y = n_comments)) +
 
 The draft only showed the ten most active users. While readable, it did not show the full participation pattern, so it was harder to support the claim that a small number of participants dominate the discussion.
 
-## Final version
+## Version 2
 
 ```{r}
 ggplot(comment_counts, aes(x = rank, y = n_comments)) +
@@ -107,3 +107,5 @@ ggplot(comment_counts, aes(x = rank, y = n_comments)) +
 ## Interpretation
 
 This shows that participation is highly concentrated: while many users appear in the discussion, a small minority account for repeated activity. I revised the original top-10 version to show the full ranked distribution so the inequality in participation is visible across the entire dataset.
+
+# Final Version
