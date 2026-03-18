@@ -70,7 +70,7 @@ ggplot(top10, aes(x = reorder(participant_label, n_comments), y = n_comments)) +
     theme_minimal()
 ```
 
-## What was missing in the draft
+### What was missing in the draft
 
 The draft only showed the ten most active users. While readable, it did not show the full participation pattern, so it was harder to support the claim that a small number of participants dominate the discussion.
 
@@ -106,7 +106,7 @@ ggplot(comment_counts, aes(x = rank, y = n_comments)) +
 
 ```
 
-## What was missing in this draft
+### What was missing in this draft
 
 This shows that participation is highly concentrated: while many users appear in the discussion, a small minority account for repeated activity. I revised the original top-10 version to show the full ranked distribution so the inequality in participation is visible across the entire dataset.
 
@@ -209,3 +209,13 @@ ggplotly(p2_best, tooltip = "text") %>%
     margin = list(t = 60, b = 60, l = 60, r = 30)
   )
 ```
+
+### Why this version is better?
+
+-   Using a lollipop chart instead of traditional bars reduces visual clutter and makes the distribution easier to read, clearly showing how a small number of highly active users contribute much more than the long tail of less active participants.
+
+-   The use of red (Top 10), orange (Top 11–50), and grey (remaining users) applies color meaningfully to highlight differences in participation, helping viewers quickly identify the most important groups while keeping the focus on the most active contributors.
+
+-   Adding interactivity allows viewers to hover over points to see exact ranks and comment counts, which is especially useful where many users appear compressed together visually.
+
+-   The color choices differ in brightness and hue, making the visualization more accessible and easier to distinguish for viewers with common forms of color vision deficiencies.

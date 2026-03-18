@@ -21,7 +21,7 @@ brexit_data <- read_csv(here("data","Brexit 5000 Sample Anonymized.csv"))
 
 This visualization examines whether political identity is associated with differences in comment tone. Understanding this helps show whether discussions are polarized or balanced across groups.
 
-## Clean variables
+### Clean variables
 
 ```{r}
 brexit_data <- brexit_data %>%
@@ -60,7 +60,7 @@ table(brexit_data$Cross_Cutting_without_Counters)
 
 ## Draft Version
 
-### Behavioral aggression by Brexit Identity
+**Behavioral aggression by Brexit Identity**
 
 ```{r}
 ggplot(
@@ -78,6 +78,10 @@ ggplot(
   ) +
   theme_minimal()
 ```
+
+### What is missing?
+
+The draft visualization made comparison difficult because the distributions lacked clear visual guides such as reference lines to show group differences. It also did not highlight the main patterns or guide the reader toward the key takeaway. Additionally, the draft lacked visual emphasis on important features, making the overall story less clear and harder to interpret.
 
 ```{r}
 library(knitr)

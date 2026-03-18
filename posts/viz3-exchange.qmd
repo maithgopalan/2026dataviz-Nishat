@@ -95,6 +95,6 @@ ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counters, -n), y 
   )
 ```
 
-### Interpretation
+### Why this version is better?
 
 This visualization shows that Brexit discussion was much more likely to occur in like-minded settings than across political disagreement. Out of all coded exchanges, the majority were like-minded rather than cross-cutting. I revised the chart by adding clearer labels, a more informative subtitle, and percentages inside the bars so that readers can immediately understand both the concept and the scale of the pattern.

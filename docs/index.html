@@ -209,8 +209,11 @@ window.Quarto = {
 
 
 
-<p>This project analyzes a dataset of <strong>5,000 anonymized comments related to Brexit discussions</strong> collected from social media platforms associated with three major campaign groups: <strong>LeaveEU, VoteLeave, and StrongerIn</strong>. The dataset captures how individuals interacted in online political discussions, including the tone of comments, the political orientation of participants, and whether discussions occurred between like-minded individuals or across opposing viewpoints.</p>
-<p>Each row in the dataset represents <strong>one comment</strong> made by a participant in the discussion. The variables describe the commenter, the tone of the message, the political context of the discussion, and the interaction structure of the conversation.</p>
+<section id="what-this-project-is-about" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-project-is-about">What this project is about?</h2>
+<p>This project analyzes a dataset of <strong>5,000</strong> anonymized comments from online Brexit discussions collected from social media spaces associated with three major campaign organizations: <strong><em>LeaveEU, VoteLeave,</em></strong>and <strong><em>StrongerIn</em></strong>. The goal of this project is to understand how political identity, discussion structure, and participation patterns shape online political conversations. By examining comment tone, engagement patterns, and interaction types, this project uses data visualization to explore how people communicate during politically polarized debates.</p>
+<p>Each observation in the dataset represents one comment posted by a participant. The variables describe the commenter’s political position, the tone of the comment, the structure of the conversation, and the level of engagement generated. Together, these variables allow us to examine patterns of disagreement, participation inequality, and behavioral differences across political groups.</p>
+</section>
 <section id="variable-descriptions" class="level2">
 <h2 class="anchored" data-anchor-id="variable-descriptions">Variable Descriptions</h2>
 <p><strong>Commenter_ID</strong><br>
@@ -232,53 +235,66 @@ Possible categories include:</p>
 <li><p><strong>Unknown</strong> – stance could not be clearly determined from the comment</p></li>
 </ul>
 <p><strong>Commenter_Total_Reactions</strong><br>
-</p>
-<p>The total number of reactions (such as likes, shares, or other engagement indicators) received by the comment. This variable provides a measure of how much attention or engagement a comment generated.</p>
+The total number of reactions (such as likes, shares, or other engagement indicators) received by the comment. This variable provides a measure of how much attention or engagement a comment generated.</p>
 <p><strong>Campaign</strong><br>
-</p>
-<p>The campaign group associated with the discussion thread where the comment was posted.<br>
+The campaign group associated with the discussion thread where the comment was posted.<br>
 The dataset includes comments from three major campaign spaces:</p>
 <ul>
 <li><p><strong>LeaveEU</strong></p></li>
 <li><p><strong>VoteLeave</strong></p></li>
-<li><p><strong>StrongerIn</strong></p>
-<p>These represent major campaign organizations involved in the Brexit debate.</p></li>
+<li><p><strong>StrongerIn</strong></p></li>
 </ul>
 <p><strong>Comment_Order</strong><br>
-</p>
-<p>The position of the comment within a discussion thread. Lower values indicate comments earlier in the conversation, while higher values indicate later responses.</p>
+The position of the comment within a discussion thread. Lower values indicate comments earlier in the conversation, while higher values indicate later responses.</p>
 <p><strong>Comment_Type</strong><br>
-</p>
-<p>Describes the type of comment made in the discussion (for example, a direct argument, response, or other interaction type).</p>
+Describes the type of comment made in the discussion (for example, a direct argument, response, or other interaction type).</p>
 <p><strong>Cross_Cutting_w_Counters</strong><br>
-</p>
-<p>Indicates whether the interaction involved disagreement between opposing viewpoints <strong>with explicit counterarguments</strong>.</p>
+Indicates whether the interaction involved disagreement between opposing viewpoints <strong>with explicit counterarguments</strong>.</p>
 <p><strong>Cross_Cutting_without_Counters</strong><br>
-</p>
-<p>Indicates whether the interaction involved disagreement between opposing viewpoints <strong>without explicit counterarguments</strong>.</p>
+Indicates whether the interaction involved disagreement between opposing viewpoints <strong>without explicit counterarguments</strong>.</p>
 <p><strong>Chain_Comment</strong><br>
-</p>
-<p>Indicates whether the comment is part of a longer conversational chain (a back-and-forth discussion) or a standalone comment.</p>
+Indicates whether the comment is part of a longer conversational chain (a back-and-forth discussion) or a standalone comment.</p>
 <ul>
 <li><p><strong>Standalone</strong> – a single comment not part of a reply chain</p></li>
 <li><p><strong>Chain</strong> – a comment that is part of an ongoing discussion thread</p></li>
 </ul>
 </section>
-<section id="why-these-variables-matter" class="level2">
-<h2 class="anchored" data-anchor-id="why-these-variables-matter">Why These Variables Matter</h2>
-<p>Together, these variables allow us to explore several key questions about online political discourse during the Brexit debate:</p>
+<section id="key-research-questions" class="level2">
+<h2 class="anchored" data-anchor-id="key-research-questions">Key Research Questions</h2>
+<p>This project is guided by several questions about online political discussion:</p>
 <ul>
-<li><p>Do people with different political identities communicate differently in terms of tone and aggression?</p></li>
-<li><p>Do discussions mostly occur among <strong>like-minded participants</strong>, or do people engage with opposing viewpoints?</p></li>
-<li><p>Are discussions dominated by a <strong>small number of highly active participants</strong>, or are they broadly distributed across many users?</p></li>
-<li><p>Do more aggressive comments attract <strong>more engagement</strong> from other users?</p>
-<p>These questions guide the visualizations presented in the project, which examine patterns of political identity, participation inequality, conversational structure, and engagement in online Brexit discussions.</p></li>
+<li><p>Do comment tone scores differ across Brexit political identities?</p></li>
+<li><p>Is participation broadly shared, or dominated by a small number of users?</p></li>
+<li><p>Are discussions more like-minded than cross-cutting?</p></li>
+<li><p>Do comments with stronger tone scores attract more reactions?</p>
+<p>The visualizations presented in this project address these questions by examining patterns of political identity, discussion structure, participation inequality, and engagement behavior.</p></li>
 </ul>
+</section>
+<section id="project-goals" class="level2">
+<h2 class="anchored" data-anchor-id="project-goals">Project Goals</h2>
+<p>The primary goal of this project is to communicate meaningful patterns in online political discussion using clear and effective data visualization. Specifically, the project examines whether political identity is associated with differences in comment tone, whether discussions occur across opposing viewpoints or within like-minded groups, whether participation is evenly distributed or dominated by a small number of users, and whether more aggressive comments receive greater engagement.</p>
+<p>In addition to answering these substantive questions, the project also demonstrates principles of good visualization design, including clarity, accessibility, reduction of visual clutter, and effective storytelling with data.</p>
+</section>
+<section id="intended-audience" class="level2">
+<h2 class="anchored" data-anchor-id="intended-audience">Intended Audience</h2>
+<p>This project is designed for students, instructors, and researchers interested in political communication, online discussion behavior, and data visualization. It is also intended for a general academic audience interested in understanding how political discussions unfold on social media. The visualizations prioritize clarity and interpretation so that viewers without advanced statistical training can easily understand the key patterns in the data.</p>
+</section>
+<section id="reproducibility" class="level2">
+<h2 class="anchored" data-anchor-id="reproducibility">Reproducibility</h2>
+<p>All analyses were conducted using R and the tidyverse ecosystem. The project is fully reproducible and hosted on GitHub, allowing others to review the code, reproduce the results, and understand how the visualizations were developed. The workflow follows reproducible research practices including clear documentation, consistent data cleaning steps, and transparent visualization decisions.</p>
+</section>
+<section id="visualization-development-process" class="level2">
+<h2 class="anchored" data-anchor-id="visualization-development-process">Visualization Development Process</h2>
+<p>A key requirement of this project is demonstrating how visualizations improved through iteration. Each visualization began as a draft version and was revised to improve readability, comparison, and interpretation. Improvements included clearer labeling, better color choices, improved layout, and the addition of reference markers to guide interpretation. These revisions reflect principles discussed in the course related to effective visual communication and audience-centered design.</p>
+</section>
+<section id="skills-demonstrated" class="level2">
+<h2 class="anchored" data-anchor-id="skills-demonstrated">Skills Demonstrated</h2>
+<p>This project demonstrates skills in data cleaning, exploratory analysis, data visualization, reproducible research, and visual storytelling. It also reflects the ability to translate complex political communication data into clear and interpretable visual explanations. More broadly, the project shows how data visualization can be used as a tool to better understand patterns of participation, disagreement, and engagement in online political environments.</p>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <p>Bossetta, M., Dutceac Segesten, A., &amp; Bonacci, D. (2023). Reconceptualizing Cross-Cutting Political Expression on Social Media: A Case Study of Facebook Comments During the 2016 Brexit Referendum. <em>Political Communication</em>, <em>40</em>(6), 719–741. https://doi.org/10.1080/10584609.2023.2222370</p>
-<p><strong>Bossetta, M.</strong> (2022). <em>Reconceptualizing cross-cutting political expression on social media: A case study of Facebook comments during the 2016 Brexit referendum</em> [Data set]. Open Science Framework. https://osf.io/phaeg</p>
+<p>Bossetta, M. (2022). <em>Reconceptualizing cross-cutting political expression on social media: A case study of Facebook comments during the 2016 Brexit referendum</em> [Data set]. Open Science Framework. https://osf.io/phaeg</p>
 
 
 
@@ -286,7 +302,7 @@ The dataset includes comments from three major campaign spaces:</p>
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1773804597443" data-listing-reading-time-sort="8" data-listing-word-count-sort="1449">
+<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1773806047842" data-listing-reading-time-sort="8" data-listing-word-count-sort="1591">
 <div class="thumbnail"><a href="./posts/viz2-commenters.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/viz2-commenters_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
@@ -305,7 +321,7 @@ This visualization examines whether participation in Brexit comment discussions 
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1773256300479" data-listing-reading-time-sort="3" data-listing-word-count-sort="527">
+<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1773806055760" data-listing-reading-time-sort="3" data-listing-word-count-sort="531">
 <div class="thumbnail"><a href="./posts/viz3-exchange.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/viz3-exchange_files/figure-html/unnamed-chunk-2-1.png"  class="thumbnail-image card-img"/></p>
@@ -347,7 +363,7 @@ This visualization examines whether comments with stronger tone received more en
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1773696991972" data-listing-reading-time-sort="5" data-listing-word-count-sort="971">
+<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1773806038069" data-listing-reading-time-sort="6" data-listing-word-count-sort="1028">
 <div class="thumbnail"><a href="./posts/viz1-aggression.html" class="no-external">
 
 <p class="card-img-top"><img src="posts/viz1-aggression_files/figure-html/unnamed-chunk-4-1.png"  class="thumbnail-image card-img"/></p>

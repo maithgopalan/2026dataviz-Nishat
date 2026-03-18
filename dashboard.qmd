@@ -265,32 +265,39 @@ p2_best <- ggplot(comment_counts, aes(
     x     = rank,
     y     = n_comments,
     color = top_group,
-    text  = paste0("Rank: ", rank, "<br>Comments: ", n_comments)
+    text  = paste0(
+      "Rank: ", rank, "\n",
+      "Comments: ", n_comments, "\n",
+      "Group: ", top_group
+    )
   )) +
-  # Stems
   geom_segment(
     aes(xend = rank, yend = 0),
-    linewidth = 0.4,
-    alpha = 0.6
+    linewidth = 0.3,
+    alpha     = 0.4
   ) +
-  # Dots
   geom_point(
     aes(size = top_group),
     alpha = 0.9
   ) +
   scale_color_manual(values = group_colors, name = "Commenter group") +
   scale_size_manual(
-    values = c("Top 10" = 4, "Top 11–50" = 2.5, "Rest" = 1.2),
+    values = c("Top 10" = 4, "Top 11–50" = 2.5, "Rest" = 0.8),
     guide  = "none"
   ) +
+  scale_x_continuous(
+    labels = comma,
+    breaks = c(1, 500, 1000, 2000, 3000, 4000)
+  ) +
+  scale_y_continuous(labels = comma) +
   annotate(
     "text",
-    x     = 10,
-    y     = max(comment_counts$n_comments) * 0.95,
-    label = "Top 10 users\ndominate activity",
-    color = "#e63946",
-    size  = 3.8,
-    hjust = 0,
+    x        = 400,
+    y        = max(comment_counts$n_comments) * 0.90,
+    label    = "Top 10 users dominate activity",
+    color    = "#e63946",
+    size     = 4,
+    hjust    = 0,
     fontface = "bold"
   ) +
   labs(
@@ -300,16 +307,35 @@ p2_best <- ggplot(comment_counts, aes(
   ) +
   theme_minimal(base_size = 13) +
   theme(
-    plot.title       = element_text(face = "bold", size = 14, color = "#1d1d1d"),
-    legend.position  = "top",
-    legend.title     = element_text(size = 10),
-    panel.grid.minor = element_blank(),
-    panel.grid.major.x = element_blank()
+    plot.title         = element_text(face = "bold", size = 14,
+                                      color = "#1d1d1d",
+                                      margin = margin(b = 10)),
+    legend.position    = "bottom",
+    legend.title       = element_text(size = 10, face = "bold"),
+    legend.text        = element_text(size = 9),
+    axis.title         = element_text(size = 11),
+    axis.text          = element_text(size = 9, color = "gray30"),
+    panel.grid.minor   = element_blank(),
+    panel.grid.major.x = element_blank(),
+    panel.grid.major.y = element_line(color = "gray90"),
+    plot.margin        = margin(t = 10, r = 15, b = 10, l = 10)
   )
 
 ggplotly(p2_best, tooltip = "text") %>%
   config(displayModeBar = FALSE) %>%
-  layout(legend = list(orientation = "h", x = 0, y = 1.1))
+  layout(
+    legend = list(
+      orientation = "h",
+      x           = 0,
+      y           = -0.15,
+      font        = list(size = 11)
+    ),
+    hoverlabel = list(
+      bgcolor     = "white",
+      font        = list(size = 12, family = "Arial"),
+      bordercolor = "gray80"
+    ),
+    margin = list(t = 50, b = 70, l = 60, r = 20))
 ```
 
 # Visualization 3: Like-Minded vs Cross-Cutting Exchange
