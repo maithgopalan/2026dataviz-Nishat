@@ -242,34 +242,74 @@ ggplotly(p2_v2, tooltip = c("x", "y")) %>%
 ### Best Version {layout-ncol="1"}
 
 ```{r}
-top_users <- comment_counts %>%
-  slice_max(n_comments, n = 8) %>%
-  mutate(label = paste("P", rank))
 
-p2_best <- ggplot(comment_counts, aes(x = rank, y = n_comments)) +
-  geom_col(fill = "#dbe5ef", width = 0.9) +
-  geom_col(data = top_users, fill = "#c97c5d", width = 0.9) +
-  geom_text_repel(
-    data = top_users,
-    aes(label = label),
-    size = 3.5,
-    box.padding = 0.3,
-    segment.color = "gray50"
+#Adding grouping column to highlight top commenters
+comment_counts <- comment_counts %>%
+  mutate(
+    top_group = case_when(
+      rank <= 10  ~ "Top 10",
+      rank <= 50  ~ "Top 11–50",
+      TRUE        ~ "Rest"
+    ),
+    top_group = factor(top_group, levels = c("Top 10", "Top 11–50", "Rest"))
+  )
+
+# Color palette — vivid for top, muted for rest
+group_colors <- c(
+  "Top 10"    = "#e63946",
+  "Top 11–50" = "#f4a261",
+  "Rest"      = "#cad2c5"
+)
+
+p2_best <- ggplot(comment_counts, aes(
+    x     = rank,
+    y     = n_comments,
+    color = top_group,
+    text  = paste0("Rank: ", rank, "<br>Comments: ", n_comments)
+  )) +
+  # Stems
+  geom_segment(
+    aes(xend = rank, yend = 0),
+    linewidth = 0.4,
+    alpha = 0.6
+  ) +
+  # Dots
+  geom_point(
+    aes(size = top_group),
+    alpha = 0.9
+  ) +
+  scale_color_manual(values = group_colors, name = "Commenter group") +
+  scale_size_manual(
+    values = c("Top 10" = 4, "Top 11–50" = 2.5, "Rest" = 1.2),
+    guide  = "none"
+  ) +
+  annotate(
+    "text",
+    x     = 10,
+    y     = max(comment_counts$n_comments) * 0.95,
+    label = "Top 10 users\ndominate activity",
+    color = "#e63946",
+    size  = 3.8,
+    hjust = 0,
+    fontface = "bold"
   ) +
   labs(
-    title = "Participation is highly unequal",
-    subtitle = "Most users commented once, while a small minority contributed repeatedly",
-    x = "Commenter rank",
-    y = "Number of comments"
+    title = "Comment Participation Is Heavily Concentrated",
+    x     = "Commenter Rank",
+    y     = "Number of Comments"
   ) +
   theme_minimal(base_size = 13) +
   theme(
-    panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank()
+    plot.title       = element_text(face = "bold", size = 14, color = "#1d1d1d"),
+    legend.position  = "top",
+    legend.title     = element_text(size = 10),
+    panel.grid.minor = element_blank(),
+    panel.grid.major.x = element_blank()
   )
 
-ggplotly(p2_best, tooltip = c("x", "y")) %>%
-  config(displayModeBar = FALSE)
+ggplotly(p2_best, tooltip = "text") %>%
+  config(displayModeBar = FALSE) %>%
+  layout(legend = list(orientation = "h", x = 0, y = 1.1))
 ```
 
 # Visualization 3: Like-Minded vs Cross-Cutting Exchange
@@ -310,22 +350,26 @@ p3_best <- ggplot(exchange_summary, aes(x = reorder(Cross_Cutting_without_Counte
   geom_col(width = 0.7, show.legend = FALSE) +
   geom_text(aes(label = comma(n)), vjust = -0.3, size = 4) +
   geom_text(aes(y = n * 0.5, label = percent(prop, accuracy = 0.1)), color = "white", size = 4, fontface = "bold") +
-  scale_fill_manual(values = c(
-    "Like-minded" = "#274c77",
-    "Cross-cutting" = "#c97c5d",
-    "Unknown" = "#8d99ae"
-  )) +
-  expand_limits(y = max(exchange_summary$n) * 1.1) +
+  scale_fill_manual(
+    values = c(
+      "Like-minded"  = "#1f4e79",
+      "Cross-cutting" = "#d97706",
+      "Unknown"      = "#9ca3af"
+    )
+  ) +
   labs(
-    title = "Brexit discussion was more often like-minded than cross-cutting",
+    title    = "Brexit discussion was more often like-minded than cross-cutting",
     subtitle = "Like-minded exchanges occur within the same political camp; cross-cutting exchanges occur across disagreement",
     x = "Type of exchange",
     y = "Number of comments"
   ) +
-  theme_minimal(base_size = 13) +
+  expand_limits(y = max(exchange_summary$n) * 1.1) +
+  theme_minimal(base_size = 14) +
   theme(
+    plot.title         = element_text(face = "bold"),
+    plot.subtitle      = element_text(color = "gray35"),
     panel.grid.major.x = element_blank(),
-    panel.grid.minor = element_blank()
+    panel.grid.minor   = element_blank()
   )
 
 ggplotly(p3_best, tooltip = c("x", "y")) %>%
