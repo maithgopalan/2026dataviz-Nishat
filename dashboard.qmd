@@ -243,7 +243,7 @@ ggplotly(p2_v2, tooltip = c("x", "y")) %>%
 
 ```{r}
 
-#Adding grouping column to highlight top commenters
+# Adding grouping column
 comment_counts <- comment_counts %>%
   mutate(
     top_group = case_when(
@@ -251,74 +251,81 @@ comment_counts <- comment_counts %>%
       rank <= 50  ~ "Top 11–50",
       TRUE        ~ "Rest"
     ),
-    top_group = factor(top_group, levels = c("Top 10", "Top 11–50", "Rest"))
+    top_group = factor(top_group, levels = c("Top 10","Top 11–50","Rest"))
   )
 
-# Color palette — vivid for top, muted for rest
+# Color palette
 group_colors <- c(
   "Top 10"    = "#e63946",
   "Top 11–50" = "#f4a261",
   "Rest"      = "#cad2c5"
 )
 
-p2_best <- ggplot(comment_counts, aes(
+p2_best <- ggplot(comment_counts,
+  aes(
     x     = rank,
     y     = n_comments,
     color = top_group,
     text  = paste0(
-      "Rank: ", rank, "\n",
-      "Comments: ", n_comments, "\n",
-      "Group: ", top_group
+      "Rank: ", rank,
+      "<br>Comments: ", comma(n_comments),
+      "<br>Group: ", top_group
     )
   )) +
+
   geom_segment(
     aes(xend = rank, yend = 0),
     linewidth = 0.3,
-    alpha     = 0.4
+    alpha = 0.35
   ) +
+
   geom_point(
     aes(size = top_group),
     alpha = 0.9
   ) +
-  scale_color_manual(values = group_colors, name = "Commenter group") +
-  scale_size_manual(
-    values = c("Top 10" = 4, "Top 11–50" = 2.5, "Rest" = 0.8),
-    guide  = "none"
+
+  scale_color_manual(
+    values = group_colors,
+    name = "Commenter group"
   ) +
+
+  scale_size_manual(
+    values = c(
+      "Top 10" = 4,
+      "Top 11–50" = 2.5,
+      "Rest" = 0.8
+    ),
+    guide = "none"
+  ) +
+
   scale_x_continuous(
     labels = comma,
-    breaks = c(1, 500, 1000, 2000, 3000, 4000)
+    breaks = c(1,500,1000,2000,3000,4000)
   ) +
+
   scale_y_continuous(labels = comma) +
-  annotate(
-    "text",
-    x        = 400,
-    y        = max(comment_counts$n_comments) * 0.90,
-    label    = "Top 10 users dominate activity",
-    color    = "#e63946",
-    size     = 4,
-    hjust    = 0,
-    fontface = "bold"
-  ) +
+
   labs(
     title = "Comment Participation Is Heavily Concentrated",
-    x     = "Commenter Rank",
-    y     = "Number of Comments"
+    subtitle = "A small group of users contributes far more comments than the rest",
+    x = "Commenter rank",
+    y = "Number of comments"
   ) +
+
   theme_minimal(base_size = 13) +
+
   theme(
-    plot.title         = element_text(face = "bold", size = 14,
-                                      color = "#1d1d1d",
-                                      margin = margin(b = 10)),
-    legend.position    = "bottom",
-    legend.title       = element_text(size = 10, face = "bold"),
-    legend.text        = element_text(size = 9),
-    axis.title         = element_text(size = 11),
-    axis.text          = element_text(size = 9, color = "gray30"),
-    panel.grid.minor   = element_blank(),
+    plot.title = element_text(face="bold", size=14),
+    plot.subtitle = element_text(size=11),
+    legend.position = "bottom",
+    legend.title = element_text(size=10, face="bold"),
+    legend.text = element_text(size=9),
+    axis.title = element_text(size=11),
+    axis.text = element_text(size=9, color="gray30"),
+    panel.grid.minor = element_blank(),
     panel.grid.major.x = element_blank(),
-    panel.grid.major.y = element_line(color = "gray90"),
-    plot.margin        = margin(t = 10, r = 15, b = 10, l = 10)
+    panel.grid.major.y = element_line(color="gray90"),
+    plot.margin = margin(15,20,15,15)
   )
 
 ggplotly(p2_best, tooltip = "text") %>%
@@ -326,16 +333,17 @@ ggplotly(p2_best, tooltip = "text") %>%
   layout(
     legend = list(
       orientation = "h",
-      x           = 0,
-      y           = -0.15,
-      font        = list(size = 11)
+      x = 0,
+      y = -0.18,
+      font = list(size = 11)
     ),
     hoverlabel = list(
-      bgcolor     = "white",
-      font        = list(size = 12, family = "Arial"),
+      bgcolor = "white",
+      font = list(size = 12, family = "Arial"),
       bordercolor = "gray80"
     ),
-    margin = list(t = 50, b = 70, l = 60, r = 20))
+    margin = list(t = 70, b = 90, l = 70, r = 30)
+  )
 ```
 
 # Visualization 3: Like-Minded vs Cross-Cutting Exchange
