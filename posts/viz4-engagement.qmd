@@ -60,7 +60,7 @@ ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reaction
   theme_minimal()
 ```
 
-### What was missing in the draft
+### What was missing in the draft?
 
 The draft used the raw reaction scale, which compressed most points near the bottom because a few comments received very high reaction counts. It also did not help the reader identify unusually high-engagement comments.
 
