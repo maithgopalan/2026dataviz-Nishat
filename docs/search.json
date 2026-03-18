@@ -91,11 +91,11 @@
     "text": "This visualization examines whether participation in Brexit comment discussions is broadly shared or dominated by a small number of highly active users. Participant IDs are anonymized and are **not shown** in the final graph."
   },
   {
-    "objectID": "posts/viz2-commenters.html#draft-version",
-    "href": "posts/viz2-commenters.html#draft-version",
+    "objectID": "posts/viz2-commenters.html#version-1",
+    "href": "posts/viz2-commenters.html#version-1",
     "title": "Comment Participation Concentration",
-    "section": "Draft Version",
-    "text": "Draft Version"
+    "section": "Version 1",
+    "text": "Version 1"
   },
   {
     "objectID": "posts/viz2-commenters.html#what-was-missing-in-the-draft",
@@ -105,18 +105,25 @@
     "text": "What was missing in the draft\nThe draft only showed the ten most active users. While readable, it did not show the full participation pattern, so it was harder to support the claim that a small number of participants dominate the discussion."
   },
   {
-    "objectID": "posts/viz2-commenters.html#final-version",
-    "href": "posts/viz2-commenters.html#final-version",
+    "objectID": "posts/viz2-commenters.html#version-2",
+    "href": "posts/viz2-commenters.html#version-2",
     "title": "Comment Participation Concentration",
-    "section": "Final version",
-    "text": "Final version"
+    "section": "Version 2",
+    "text": "Version 2"
   },
   {
-    "objectID": "posts/viz2-commenters.html#interpretation",
-    "href": "posts/viz2-commenters.html#interpretation",
+    "objectID": "posts/viz2-commenters.html#what-was-missing-in-this-draft",
+    "href": "posts/viz2-commenters.html#what-was-missing-in-this-draft",
     "title": "Comment Participation Concentration",
-    "section": "Interpretation",
-    "text": "Interpretation\nThis shows that participation is highly concentrated: while many users appear in the discussion, a small minority account for repeated activity. I revised the original top-10 version to show the full ranked distribution so the inequality in participation is visible across the entire dataset."
+    "section": "What was missing in this draft",
+    "text": "What was missing in this draft\nThis shows that participation is highly concentrated: while many users appear in the discussion, a small minority account for repeated activity. I revised the original top-10 version to show the full ranked distribution so the inequality in participation is visible across the entire dataset."
+  },
+  {
+    "objectID": "posts/viz2-commenters.html#best-version",
+    "href": "posts/viz2-commenters.html#best-version",
+    "title": "Comment Participation Concentration",
+    "section": "Best Version",
+    "text": "Best Version"
   },
   {
     "objectID": "posts/viz4-engagement.html",
