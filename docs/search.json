@@ -123,7 +123,7 @@
     "href": "posts/viz4-engagement.html#final-version",
     "title": "Aggression and Engagement",
     "section": "Final Version",
-    "text": "Final Version\n\n\n\n\n\n\n\n\n\n\nInterpretation\nThe final visualization shows that engagement is highly concentrated, with most comments receiving modest reaction counts while a small number attract substantially higher engagement. The log transformation makes this unequal distribution visible by preventing highly reacted comments from compressing the rest of the data. Although the relationship between tone and engagement is not strongly linear, several of the most engaged comments display stronger tone scores, suggesting that more strongly expressed opinions may draw greater attention. This indicates that discussion visibility may be shaped not just by participation, but also by the intensity of expressed viewpoints."
+    "text": "Final Version\n\n\n\n\n\n\n\n\n\n\nWhy this version is better?\nThe final visualization shows that engagement is highly concentrated, with most comments receiving modest reaction counts while a small number attract substantially higher engagement. The log transformation makes this unequal distribution visible by preventing highly reacted comments from compressing the rest of the data. Although the relationship between tone and engagement is not strongly linear, several of the most engaged comments display stronger tone scores, suggesting that more strongly expressed opinions may draw greater attention. This indicates that discussion visibility may be shaped not just by participation, but also by the intensity of expressed viewpoints."
   },
   {
     "objectID": "posts/progress-01.html",

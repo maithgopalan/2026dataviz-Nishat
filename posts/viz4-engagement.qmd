@@ -96,6 +96,6 @@ ggplot(engagement_data, aes(x = Commenter_BA_Score, y = Commenter_Total_Reaction
   )
 ```
 
-### Interpretation
+### Why this version is better?
 
 The final visualization shows that engagement is highly concentrated, with most comments receiving modest reaction counts while a small number attract substantially higher engagement. The log transformation makes this unequal distribution visible by preventing highly reacted comments from compressing the rest of the data. Although the relationship between tone and engagement is not strongly linear, several of the most engaged comments display stronger tone scores, suggesting that more strongly expressed opinions may draw greater attention. This indicates that discussion visibility may be shaped not just by participation, but also by the intensity of expressed viewpoints.
