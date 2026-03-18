@@ -190,7 +190,7 @@ ggplot(comment_counts,
   theme(
     plot.title = element_text(
       face="bold",
-      size=15,
+      size=13,
       color="#1d1d1d",
       margin=margin(b=5)
     ),
@@ -203,8 +203,8 @@ ggplot(comment_counts,
 
     plot.caption = element_text(
       color="gray55",
-      size=9,
-      margin=margin(t=10)
+      size=11,
+      margin=margin(t=9)
     ),
 
     legend.position="bottom",
